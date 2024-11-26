@@ -90,6 +90,7 @@ import { ref } from "vue"
 import DefaultValues from "../assets/_default.js"
 
 const MODE = import.meta.env.VITE_MODE
+const list = ref([])
 
 const updateProgress = (list) => {
 	if (list !== undefined) {
@@ -106,9 +107,6 @@ const resetProgress = () => {
 	localStorage.removeItem('progress')
 	list.value = DefaultValues()
 }
-
-const list = ref([])
-
 
 if (getProgress() === undefined || getProgress() === null) {
 	list.value = DefaultValues()
