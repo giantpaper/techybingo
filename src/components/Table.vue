@@ -98,7 +98,6 @@ const updateProgress = (list) => {
 			localStorage.setItem('progress', JSON.stringify(list))
 		})
 	}
-	console.log( 'Saving....' , getProgress())
 }
 const getProgress = () => {
 	return localStorage.getItem('progress')
@@ -110,15 +109,12 @@ const resetProgress = () => {
 
 const list = ref([])
 
-console.log( getProgress() )
 
 if (getProgress() === undefined || getProgress() === null) {
 	list.value = DefaultValues()
 	updateProgress(list.value)
-	console.log(JSON.parse( getProgress() ))
 }
 else {
-	console.log(getProgress())
 	list.value = JSON.parse( getProgress() )
 }
 
