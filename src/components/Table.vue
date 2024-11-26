@@ -86,7 +86,6 @@
 	}
 </style>
 <script setup>
-import Cell from "../components/Cell.vue"
 import { ref } from "vue"
 import DefaultValues from "../assets/_default.js"
 
