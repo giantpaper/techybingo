@@ -24,6 +24,7 @@ export default function DefaultValues () {
 		`Forgot to update your Slack status from 'away' to 'active' after lunch`,
 		`Needed to restart after computer glitches/crashes`,
 		`Got up to refill your waterbottle`,
+		`Sent a meme to coworker(s)`
 	]
 	
 	items.splice(12, 0, `Free Space`)
