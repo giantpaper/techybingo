@@ -26,13 +26,13 @@ export default function DefaultValues () {
 		`Got up to refill your waterbottle`,
 		`Sent a meme to coworker(s)`
 	]
-	
+
 	items.splice(12, 0, `Free Space`)
-	
+
 	items.forEach(item => {
 		let newItem = { id: i++, label: item, checked: item === `Free Space` ? true : false, }
 		l.push(newItem)
 	})
-	
+
 	return l
 }
