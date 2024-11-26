@@ -21,7 +21,7 @@ export default function DefaultValues () {
 		`Said or heard "It's Fri-yay!"`,
 		`Said or heard "Does this need a quote?"`,
 		`You/Someone forgets what day it is.`,
-		`Forgot to update Slack status from 'away' to 'active' after lunch`,
+		`Forgot to update your Slack status from 'away' to 'active' after lunch`,
 		`Needed to restart after computer glitches/crashes`,
 		`Got up to refill your waterbottle`,
 	]
