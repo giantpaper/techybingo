@@ -10,7 +10,6 @@
 			</label>
 		</li>
 	</ul>
-	<button v-if="MODE==='development'" @click="resetProgress">Reset</button>
 </template>
 <style lang="scss" scoped>
 	.table {
@@ -71,18 +70,6 @@
 	}
 	.free-space {
 		background: #ededed !important;
-	}
-	button {
-		padding: 1rem 2rem;
-		border: 2px var(--color-text) solid;
-		background: #fff;
-		cursor: pointer;
-		transition: transform 0.2s, box-shadow 0.2s;
-		box-shadow: 0 0 0 rgba(0, 0, 0, 0.302);
-		&:hover {
-			transform: translate(-2px, -2px);
-			box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.302);
-		}
 	}
 </style>
 <script setup>
