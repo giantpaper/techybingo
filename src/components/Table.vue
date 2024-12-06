@@ -28,6 +28,12 @@
 	li {
 		border-right: 2px var(--color-text) solid;
 		border-bottom: 2px var(--color-text) solid;
+		&.bingo {
+			background: #a20046;
+			.checked {
+				color: white;
+			}
+		}
 	}
 	.free-space,
 	label {
