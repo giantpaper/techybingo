@@ -60,7 +60,6 @@
 			transform: rotate(-45deg);
 		}
 		&.checked {
-			background: #fdfdfd;
 			&::before,
 			&::after {
 				width: 1px;
