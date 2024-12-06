@@ -75,7 +75,7 @@
 		cursor: pointer;
 	}
 	.free-space {
-		background: #ededed !important;
+		background: rgba(0,0,0,0.125) !important;
 	}
 </style>
 <script setup>
