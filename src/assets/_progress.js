@@ -1,8 +1,5 @@
-import Bingo from "./_bingo.js"
-
 export default class Progress {
 	constructor(list) {
-		this.bingo = new Bingo(list)
 		this.list = list
 	}
 	set (newList) {
@@ -16,7 +13,6 @@ export default class Progress {
 		if (this.list !== undefined) {
 			setTimeout(() => {
 				this.set()
-				this.bingo.checkWin(this.list[num], lis)
 			})
 		}
 	}
@@ -30,23 +26,23 @@ export default class Progress {
 		return this.list
 	}
 }
-
-export function startProgress (list) {
-	return new Progress(list)
-}
-export function resetProgress(list) {
-	let progress = startProgress(list)
-	return progress.reset()
-}
-export function getProgress(list) {
-	let progress = startProgress(list)
-	return progress.get()
-}
-export function setProgress(list) {
-	let progress = startProgress(list)
-	return progress.set()
-}
-export function updateProgress(list, i, lis) {
-	let progress = startProgress(list)
-	return progress.update(i)
-}
+//
+// export function startProgress (list) {
+// 	return new Progress(list)
+// }
+// export function resetProgress(list) {
+// 	let progress = startProgress(list)
+// 	return progress.reset()
+// }
+// export function getProgress(list) {
+// 	let progress = startProgress(list)
+// 	return progress.get()
+// }
+// export function setProgress(list) {
+// 	let progress = startProgress(list)
+// 	return progress.set()
+// }
+// export function updateProgress(list, i, lis) {
+// 	let progress = startProgress(list)
+// 	return progress.update(i)
+// }

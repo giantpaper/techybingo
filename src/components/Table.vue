@@ -5,7 +5,7 @@
 				Free Space
 			</div>
 			<label v-else :class="{ checked: item.checked, }">
-				<input type="checkbox" v-model="item.checked" @click="updateProgress(list, i, lis)" />
+				<input type="checkbox" v-model="item.checked" @click="bingo.checkWin(list, lis, i)" />
 				{{ item.label }}
 			</label>
 		</li>
@@ -80,12 +80,14 @@
 <script setup>
 import { ref } from "vue"
 import DefaultValues from "../assets/_default.js"
-import { updateProgress, getProgress, setProgress } from "../assets/_progress.js"
+// import { updateProgress, getProgress, setProgress } from "../assets/_progress.js"
 import Bingo from "../assets/_bingo.js"
 
 const list = ref([]) // progress
 const lis = ref({}) // list of <li>
 const bingo = new Bingo(list)
+
+list.value = bingo.list()
 
 // ONLY FOR DEBUGGING PURPOSES!!!
 // This resets bingo progress by clearing out the localStorage
@@ -93,13 +95,5 @@ const bingo = new Bingo(list)
 // --- Comment out when not in use
 // if (import.meta.env.VITE_MODE === 'development') { progress.reset() }
 
-if (getProgress() === undefined || getProgress() === null) {
-	//list.value = DefaultValues()
-	list = resetProgress()
-	setProgress(list.value)
-}
-else {
-	list.value = JSON.parse( getProgress() )
-}
 
 </script>

@@ -1,6 +1,8 @@
 import { range } from 'mathjs'
 import { ref } from 'vue'
 
+import Progress from "./_progress.js"
+
 const arraySum = (arr) => {
 	return arr.reduce((total, current) => {
 		return total + current;
@@ -9,6 +11,7 @@ const arraySum = (arr) => {
 
 export default class Bingo {
 	constructor(cards) {
+		this.progress = new Progress()
 		this.cards = cards
 		this.rows = [
 			range(0, 5),
@@ -48,6 +51,18 @@ export default class Bingo {
 				'diag2',
 			],
 		}
+	}
+	list() {
+		if (this.progress.get() === undefined || this.progress.get() === null) {
+			//list.value = DefaultValues()
+			this.list = progress.reset()
+			this.progress.set(list.value)
+		}
+		else {
+			this.list.value = JSON.parse( this.progress.get() )
+		}
+
+		return this.list.value
 	}
 	classes(i) {
 		let classes = []
@@ -114,7 +129,7 @@ export default class Bingo {
 			}
 		})
 	}
-	checkWin(item, lis) {
+	checkWin(item, lis, i) {
 		// check each row
 		this.check('row', 'rows', item, lis)
 		this.check('col', 'cols', item, lis)
