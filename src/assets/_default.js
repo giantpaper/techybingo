@@ -1,6 +1,10 @@
+import { checkWeek, shuffle, weekNumber } from "./_functions.js"
+import Progress from "./_progress.js"
+
 export default function DefaultValues () {
 	let l = []
 	let i = 0
+
 	let items = [
 		`Joked about how long your "commute" is`,
 		`Used an emoji in an email`,
@@ -25,12 +29,30 @@ export default function DefaultValues () {
 		`Needed to restart after computer glitches/crashes`,
 		`Got up to refill your waterbottle`,
 		`Sent a meme to coworker(s)`,
+		`Client said "can we get on a call?"`,
+		`Someone says 'good morning!' to everyone`,
+		`Said or heard "Can you email that to everyone?" on a call`,
+		`Said or heard "Hey guys, I have to jump on another call"`,
+		`Said or heard "I think there's lag"`,
+		`*sound of someone typing on a call...possibly with a hammer*`,
+		`Said or heard "Can you email that to me?" on a call`,
+		`Someone uses a custom background on a call`,
+		`Helpscout/Github/Shopify/Cloudflare is down`,
 	]
 
+	// Randomize dat array
+	checkWeek()
+	shuffle(items)
+
+	// Add obligatory free space
 	items.splice(12, 0, `Free Space`)
 
+	// chop off the extras so there's only 25 squares
+	items = items.slice(0, 25)
+
 	items.forEach(item => {
-		let newItem = { id: i++, label: item, checked: item === `Free Space` ? true : false, }
+		// Make sure free space is always checked
+		let newItem = { id: i++, label: item, checked: item === `Free Space` ? true : false, bingo: false, }
 		l.push(newItem)
 	})
 

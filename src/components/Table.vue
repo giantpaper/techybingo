@@ -1,11 +1,11 @@
 <template>
 	<ul class="table">
-		<li v-for="(item, i) in list">
-			<div class="free-space checked" v-if="item.label === `Free Space`">
+		<li v-for="(item, i) in list" :class="bingo.classes(i)" :ref="li => (lis[i] = li)">
+			<div class="free-space checked" v-if="i===12">
 				Free Space
 			</div>
-			<label v-else :class="{ checked: item.checked }">
-				<input type="checkbox" v-model="item.checked" @click="updateProgress(list)" />
+			<label v-else :class="{ checked: item.checked, }">
+				<input type="checkbox" v-model="item.checked" @click="updateProgress(list, i, lis)" />
 				{{ item.label }}
 			</label>
 		</li>
@@ -80,29 +80,23 @@
 <script setup>
 import { ref } from "vue"
 import DefaultValues from "../assets/_default.js"
+import { updateProgress, getProgress, setProgress } from "../assets/_progress.js"
+import Bingo from "../assets/_bingo.js"
 
-const MODE = import.meta.env.VITE_MODE
-const list = ref([])
+const list = ref([]) // progress
+const lis = ref({}) // list of <li>
+const bingo = new Bingo(list)
 
-const updateProgress = (list) => {
-	if (list !== undefined) {
-		setTimeout(() => {
-			// Apparently this was running before the list = ref even had a chance to update
-			localStorage.setItem('progress', JSON.stringify(list))
-		})
-	}
-}
-const getProgress = () => {
-	return localStorage.getItem('progress')
-}
-const resetProgress = () => {
-	localStorage.removeItem('progress')
-	list.value = DefaultValues()
-}
+// ONLY FOR DEBUGGING PURPOSES!!!
+// This resets bingo progress by clearing out the localStorage
+// --- Keep the conditional intact to make sure it doesn't run in product
+// --- Comment out when not in use
+// if (import.meta.env.VITE_MODE === 'development') { progress.reset() }
 
 if (getProgress() === undefined || getProgress() === null) {
-	list.value = DefaultValues()
-	updateProgress(list.value)
+	//list.value = DefaultValues()
+	list = resetProgress()
+	setProgress(list.value)
 }
 else {
 	list.value = JSON.parse( getProgress() )
