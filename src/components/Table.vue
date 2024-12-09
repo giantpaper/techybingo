@@ -19,7 +19,7 @@
 		grid-template-columns: repeat(5, 1fr);
 		margin: 0 auto;
 		width: 100%;
-		max-width: 675px;
+		max-width: 700px;
 		list-style: none;
 		margin-top: 0;
 		margin-bottom: 0;
@@ -91,8 +91,9 @@ const bingo = new Bingo(list.value)
 list.value = bingo.list()
 
 function ifWin(list, liList, i) {
+	// Apparently this was running before the list = ref even had a chance to update
 	setTimeout(() => {
-		bingo.ifWin(list, liList, i)
+		bingo.ifWin(list, liList, i, true)
 		list.value = bingo.list()
 	})
 }

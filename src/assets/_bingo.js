@@ -13,14 +13,14 @@ export default class Bingo {
 	constructor(cardsValue) {
 		this.cardsValue = cardsValue
 		this.rows = [
-			range(0, 5),
+			range(0, 5), // range(startIndex, lengthOfArray)
 			range(5, 10),
 			range(10, 15),
 			range(15, 20),
 			range(20, 25),
 		]
 		this.cols = [
-			range(0, 21, 5),
+			range(0, 21, 5), // range(startIndex, lengthOfArray, step)
 			range(1, 22, 5),
 			range(2, 23, 5),
 			range(3, 24, 5),
@@ -51,11 +51,11 @@ export default class Bingo {
 			],
 		}
 		this.progress = new Progress(cardsValue)
-		this.listValue = this.progress.set()
+		this.listValue = this.progress.update()
 
 		// ONLY FOR DEBUGGING PURPOSES!!!
 		// This resets bingo progress by clearing out the localStorage
-		// --- Keep the conditional intact to make sure it doesn't run in product
+		// --- Keep the conditional intact to make sure it doesn't run in production
 		// --- Comment out when not in use
 		// if (import.meta.env.VITE_MODE === 'development') { this.progress.reset() }
 	}
@@ -141,8 +141,10 @@ export default class Bingo {
 			}
 		})
 	}
-	ifWin(listValue, liList, i) {
-		this.listValue = this.progress.set(listValue)
+	ifWin(listValue, liList, i, update) {
+		if (update === true) {
+			this.listValue = this.progress.update(listValue)
+		}
 		// check each row
 		this.check('row', 'rows', listValue[i], liList)
 		this.check('col', 'cols', listValue[i], liList)
