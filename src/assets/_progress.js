@@ -1,20 +1,28 @@
+import DefaultValues from "./_default.js"
+
 export default class Progress {
-	constructor(list) {
-		this.list = list
+	constructor(listValue) {
+		this.listValue = listValue
+
+		this.update(listValue)
 	}
 	set (newList) {
-		let list = newList || this.list
+		let listValue = newList || DefaultValues()
 		// Apparently this was running before the list = ref even had a chance to update
-		localStorage.setItem('progress', JSON.stringify(list))
+		localStorage.setItem('progress', JSON.stringify(listValue))
+
+		this.listValue = listValue
+		return listValue
 		// localStorage.setItem('currentWeek', datetime.getWeekNumber())
 	}
-	update (num, newList, lis) {
-		let list = newList || this.list
-		if (this.list !== undefined) {
+	update (num, newListValue, lis) {
+		if (newListValue !== undefined) {
 			setTimeout(() => {
-				this.set()
+				this.set(newListValue || this.listValue)
 			})
 		}
+		console.log(this.listValue)
+		return this.listValue
 	}
 	get () {
 		return localStorage.getItem('progress')
@@ -22,8 +30,8 @@ export default class Progress {
 	reset () {
 		localStorage.removeItem('currentWeek')
 		localStorage.removeItem('progress')
-		this.list.value = DefaultValues()
-		return this.list
+		this.set()
+		return this.listValue
 	}
 }
 //

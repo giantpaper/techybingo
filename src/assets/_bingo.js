@@ -10,9 +10,8 @@ const arraySum = (arr) => {
 }
 
 export default class Bingo {
-	constructor(cards) {
-		this.progress = new Progress()
-		this.cards = cards
+	constructor(cardsValue) {
+		this.cardsValue = cardsValue
 		this.rows = [
 			range(0, 5),
 			range(5, 10),
@@ -51,18 +50,26 @@ export default class Bingo {
 				'diag2',
 			],
 		}
+		this.listValue
+		this.progress = new Progress(cardsValue)
+
+		// ONLY FOR DEBUGGING PURPOSES!!!
+		// This resets bingo progress by clearing out the localStorage
+		// --- Keep the conditional intact to make sure it doesn't run in product
+		// --- Comment out when not in use
+		// if (import.meta.env.VITE_MODE === 'development') { this.progress.reset() }
 	}
 	list() {
 		if (this.progress.get() === undefined || this.progress.get() === null) {
 			//list.value = DefaultValues()
-			this.list = progress.reset()
-			this.progress.set(list.value)
+			this.listValue = this.progress.reset()
+			this.progress.set(this.listValue)
 		}
 		else {
-			this.list.value = JSON.parse( this.progress.get() )
+			this.listValue = JSON.parse( this.progress.get() )
 		}
 
-		return this.list.value
+		return this.listValue
 	}
 	classes(i) {
 		let classes = []
@@ -117,7 +124,7 @@ export default class Bingo {
 				let sum = []
 				rol._data.forEach(i => {
 					// add up all crossed out items
-					let card = this.cards.value[i]
+					let card = this.cardsValue[i]
 					sum.push(card.checked ? 1 : 0)
 				})
 				if ( arraySum(sum) > 4 ) {
@@ -130,6 +137,7 @@ export default class Bingo {
 		})
 	}
 	checkWin(item, lis, i) {
+		this.listValue = this.progress.update(i, this.listValue, lis)
 		// check each row
 		this.check('row', 'rows', item, lis)
 		this.check('col', 'cols', item, lis)

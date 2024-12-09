@@ -5,7 +5,7 @@
 				Free Space
 			</div>
 			<label v-else :class="{ checked: item.checked, }">
-				<input type="checkbox" v-model="item.checked" @click="bingo.checkWin(list, lis, i)" />
+				<input type="checkbox" v-model="item.checked" @click="checkWin(list, lis, i)" />
 				{{ item.label }}
 			</label>
 		</li>
@@ -85,15 +85,15 @@ import Bingo from "../assets/_bingo.js"
 
 const list = ref([]) // progress
 const lis = ref({}) // list of <li>
-const bingo = new Bingo(list)
+list.value = DefaultValues()
+const bingo = new Bingo(list.value)
 
 list.value = bingo.list()
 
-// ONLY FOR DEBUGGING PURPOSES!!!
-// This resets bingo progress by clearing out the localStorage
-// --- Keep the conditional intact to make sure it doesn't run in product
-// --- Comment out when not in use
-// if (import.meta.env.VITE_MODE === 'development') { progress.reset() }
+function checkWin(list, lis, i) {
+	bingo.checkWin(list, lis, i)
+	list.value = bingo.list()
+}
 
 
 </script>
