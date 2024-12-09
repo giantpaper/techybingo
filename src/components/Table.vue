@@ -5,7 +5,7 @@
 				Free Space
 			</div>
 			<label v-else :class="{ checked: item.checked, }">
-				<input type="checkbox" v-model="item.checked" @click="checkWin(list, liList, i)" />
+				<input type="checkbox" v-model="item.checked" @click="ifWin(list, liList, i)" />
 				{{ item.label }}
 			</label>
 		</li>
@@ -85,13 +85,14 @@ import Bingo from "../assets/_bingo.js"
 
 const list = ref([]) // progress
 const liList = ref({}) // list of <li>
+
 const bingo = new Bingo(list.value)
 
 list.value = bingo.list()
 
-function checkWin(list, liList, i) {
+function ifWin(list, liList, i) {
 	setTimeout(() => {
-		bingo.checkWin(list, liList, i)
+		bingo.ifWin(list, liList, i)
 		list.value = bingo.list()
 	})
 }

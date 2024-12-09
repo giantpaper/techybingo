@@ -50,8 +50,8 @@ export default class Bingo {
 				'diag2',
 			],
 		}
-		this.listValue
 		this.progress = new Progress(cardsValue)
+		this.listValue = this.progress.set()
 
 		// ONLY FOR DEBUGGING PURPOSES!!!
 		// This resets bingo progress by clearing out the localStorage
@@ -60,15 +60,6 @@ export default class Bingo {
 		// if (import.meta.env.VITE_MODE === 'development') { this.progress.reset() }
 	}
 	list() {
-		if (this.progress.get() === undefined || this.progress.get() === null) {
-			//list.value = DefaultValues()
-			this.listValue = this.progress.reset()
-			this.progress.set(this.listValue)
-		}
-		else {
-			this.listValue = JSON.parse( this.progress.get() )
-		}
-
 		return this.listValue
 	}
 	classes(i) {
@@ -119,8 +110,22 @@ export default class Bingo {
 		// rol = row + col
 		this[plural].forEach((rol, h) => {
 			// check each cell
-			if (rol._data.indexOf(item.id) > -1) {
+			if (typeof item === 'object' && rol._data.indexOf(item.id) > -1) {
 				// was the clicked card in one of these cells?
+				let sum = []
+				rol._data.forEach(i => {
+					// add up all crossed out items
+					let card = this.listValue[i]
+					sum.push(card.checked ? 1 : 0)
+				})
+				if ( arraySum(sum) > 4 ) {
+					let classname = `${singular}${h+1}`
+					document.querySelectorAll(`.${classname}`).forEach(cell => {
+						cell.classList.add('bingo')
+					})
+				}
+			}
+			else {
 				let sum = []
 				rol._data.forEach(i => {
 					// add up all crossed out items
@@ -136,8 +141,8 @@ export default class Bingo {
 			}
 		})
 	}
-	checkWin(listValue, liList, i) {
-		this.listValue = this.progress.update(i, listValue, liList)
+	ifWin(listValue, liList, i) {
+		this.listValue = this.progress.set(listValue)
 		// check each row
 		this.check('row', 'rows', listValue[i], liList)
 		this.check('col', 'cols', listValue[i], liList)
