@@ -21,7 +21,6 @@ export default class Progress {
 				this.set(newListValue || this.listValue)
 			})
 		}
-		console.log(this.listValue)
 		return this.listValue
 	}
 	get () {

@@ -124,7 +124,7 @@ export default class Bingo {
 				let sum = []
 				rol._data.forEach(i => {
 					// add up all crossed out items
-					let card = this.cardsValue[i]
+					let card = this.listValue[i]
 					sum.push(card.checked ? 1 : 0)
 				})
 				if ( arraySum(sum) > 4 ) {
@@ -136,11 +136,11 @@ export default class Bingo {
 			}
 		})
 	}
-	checkWin(item, lis, i) {
-		this.listValue = this.progress.update(i, this.listValue, lis)
+	checkWin(listValue, liList, i) {
+		this.listValue = this.progress.update(i, listValue, liList)
 		// check each row
-		this.check('row', 'rows', item, lis)
-		this.check('col', 'cols', item, lis)
-		this.check('diag', 'diag', item, lis)
+		this.check('row', 'rows', listValue[i], liList)
+		this.check('col', 'cols', listValue[i], liList)
+		this.check('diag', 'diag', listValue[i], liList)
 	}
 }

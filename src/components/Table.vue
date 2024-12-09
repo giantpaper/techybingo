@@ -1,11 +1,11 @@
 <template>
 	<ul class="table">
-		<li v-for="(item, i) in list" :class="bingo.classes(i)" :ref="li => (lis[i] = li)">
+		<li v-for="(item, i) in list" :class="bingo.classes(i)" :ref="li => (liList[i] = li)">
 			<div class="free-space checked" v-if="i===12">
 				Free Space
 			</div>
 			<label v-else :class="{ checked: item.checked, }">
-				<input type="checkbox" v-model="item.checked" @click="checkWin(list, lis, i)" />
+				<input type="checkbox" v-model="item.checked" @click="checkWin(list, liList, i)" />
 				{{ item.label }}
 			</label>
 		</li>
@@ -84,15 +84,16 @@ import DefaultValues from "../assets/_default.js"
 import Bingo from "../assets/_bingo.js"
 
 const list = ref([]) // progress
-const lis = ref({}) // list of <li>
-list.value = DefaultValues()
+const liList = ref({}) // list of <li>
 const bingo = new Bingo(list.value)
 
 list.value = bingo.list()
 
-function checkWin(list, lis, i) {
-	bingo.checkWin(list, lis, i)
-	list.value = bingo.list()
+function checkWin(list, liList, i) {
+	setTimeout(() => {
+		bingo.checkWin(list, liList, i)
+		list.value = bingo.list()
+	})
 }
 
 
