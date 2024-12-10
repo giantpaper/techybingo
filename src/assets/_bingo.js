@@ -51,7 +51,7 @@ export default class Bingo {
 			],
 		}
 		this.progress = new Progress(cardsValue)
-		this.listValue = this.progress.update()
+		this.listValue = this.progress.update(cardsValue)
 
 		// ONLY FOR DEBUGGING PURPOSES!!!
 		// This resets bingo progress by clearing out the localStorage
@@ -110,7 +110,7 @@ export default class Bingo {
 		// rol = row + col
 		this[plural].forEach((rol, h) => {
 			// check each cell
-			if (typeof item === 'object' && rol._data.indexOf(item.id) > -1) {
+			if (item !== null && rol._data.indexOf(item.id) > -1) {
 				// was the clicked card in one of these cells?
 				let sum = []
 				rol._data.forEach(i => {
@@ -134,20 +134,21 @@ export default class Bingo {
 				})
 				if ( arraySum(sum) > 4 ) {
 					let classname = `${singular}${h+1}`
-					document.querySelectorAll(`.${classname}`).forEach(cell => {
-						cell.classList.add('bingo')
+					setTimeout(() => {
+						// Wait for dom to load
+						document.querySelectorAll(`.${classname}`).forEach(cell => {
+							cell.classList.add('bingo')
+						})
 					})
 				}
 			}
 		})
 	}
-	ifWin(listValue, liList, i, update) {
-		if (update === true) {
-			this.listValue = this.progress.update(listValue)
-		}
+	ifWin(listValue, liList, i) {
+		this.listValue = this.progress.update(listValue)
 		// check each row
-		this.check('row', 'rows', listValue[i], liList)
-		this.check('col', 'cols', listValue[i], liList)
-		this.check('diag', 'diag', listValue[i], liList)
+		this.check('row', 'rows', listValue[i] || null, liList)
+		this.check('col', 'cols', listValue[i] || null, liList)
+		this.check('diag', 'diag', listValue[i] || null, liList)
 	}
 }

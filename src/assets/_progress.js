@@ -1,15 +1,18 @@
 import DefaultValues from "./_default.js"
 
 export default class Progress {
-	constructor(listValue) {
+	constructor (listValue) {
 		if (!this.listValue) {
 			this.listValue = listValue
 		}
 	}
-	set (newListValue) {
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties
+	// Needs to be private so it does not get used outside the Progress class
+	// For outside classs use, use .update() instead
+	// Or .reset() if all progress needs to be cleared/gameboard needs to change
+	#set (newListValue) {
 		this.listValue = newListValue || DefaultValues()
 		localStorage.setItem('progress', JSON.stringify(this.listValue))
-		this.listValue = newListValue
 		return this.listValue
 		// localStorage.setItem('currentWeek', datetime.getWeekNumber())
 	}
@@ -17,17 +20,8 @@ export default class Progress {
 		return JSON.parse(localStorage.getItem('progress'))
 	}
 	update(newListValue) {
-		let listValue = this.get()
-
-		if (listValue === undefined) {
-			if (newListValue !== undefined) {
-				listValue = newListValue
-			}
-			else {
-				listValue = DefaultValues()
-			}
-		}
-		this.set(listValue)
+		// newListValue/this.listValue might be blank on page load, so grabbing the stored value from localStorage
+		this.listValue = this.#set(newListValue.length > 0 ? newListValue : this.get())
 
 		return this.listValue
 		// localStorage.setItem('currentWeek', datetime.getWeekNumber())
@@ -35,27 +29,7 @@ export default class Progress {
 	reset () {
 		localStorage.removeItem('currentWeek')
 		localStorage.removeItem('progress')
-		this.set()
+		this.#set()
 		return this.listValue
 	}
 }
-//
-// export function startProgress (list) {
-// 	return new Progress(list)
-// }
-// export function resetProgress(list) {
-// 	let progress = startProgress(list)
-// 	return progress.reset()
-// }
-// export function getProgress(list) {
-// 	let progress = startProgress(list)
-// 	return progress.get()
-// }
-// export function setProgress(list) {
-// 	let progress = startProgress(list)
-// 	return progress.set()
-// }
-// export function updateProgress(list, i, lis) {
-// 	let progress = startProgress(list)
-// 	return progress.update(i)
-// }

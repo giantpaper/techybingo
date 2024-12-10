@@ -90,10 +90,12 @@ const bingo = new Bingo(list.value)
 
 list.value = bingo.list()
 
+bingo.ifWin([], liList)
+
 function ifWin(list, liList, i) {
 	// Apparently this was running before the list = ref even had a chance to update
 	setTimeout(() => {
-		bingo.ifWin(list, liList, i, true)
+		bingo.ifWin(list, liList, i)
 		list.value = bingo.list()
 	})
 }
