@@ -5,7 +5,7 @@
 				Free Space
 			</div>
 			<label v-else :class="{ checked: item.checked, }">
-				<input type="checkbox" v-model="item.checked" @click="ifWin(list, liList, i)" />
+				<input type="checkbox" v-model="item.checked" @click="ifWin(list, liList, i)" v-if="disabled===false" />
 				{{ item.label }}
 			</label>
 		</li>
@@ -76,6 +76,9 @@
 	.free-space {
 		background: rgba(0,0,0,0.125) !important;
 	}
+	.table.disabled label {
+		cursor: default;
+	}
 </style>
 <script setup>
 import { ref } from "vue"
@@ -90,13 +93,22 @@ const bingo = new Bingo(list.value)
 
 list.value = bingo.list()
 
-bingo.ifWin([], liList)
+ifWin([], liList)
+
+const disabled = ref(false)
 
 function ifWin(list, liList, i) {
 	// Apparently this was running before the list = ref even had a chance to update
 	setTimeout(() => {
-		bingo.ifWin(list, liList, i)
+		let win = bingo.ifWin(list, liList, i)
 		list.value = bingo.list()
+		if (bingo.win === true) {
+			// Disable board if bingo is reached
+			document.querySelectorAll(`.table > li`).forEach(li => {
+				disabled.value = true
+				li.parentNode.classList.add('disabled')
+			})
+		}
 	})
 }
 

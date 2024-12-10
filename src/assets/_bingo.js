@@ -12,6 +12,7 @@ const arraySum = (arr) => {
 export default class Bingo {
 	constructor(cardsValue) {
 		this.cardsValue = cardsValue
+		this.win = false
 		this.rows = [
 			range(0, 5), // range(startIndex, lengthOfArray)
 			range(5, 10),
@@ -106,41 +107,31 @@ export default class Bingo {
 
 		return classes.join(' ')
 	}
+	#check (rol, singular, h) {
+		let sum = []
+		rol._data.forEach(i => {
+			// add up all crossed out items
+			let card = this.listValue[i]
+			sum.push(card.checked ? 1 : 0)
+		})
+		if ( arraySum(sum) > 4 ) {
+			let classname = `${singular}${h+1}`
+			setTimeout(() => {
+				// Wait for dom to load
+				document.querySelectorAll(`.${classname}`).forEach(cell => {
+					cell.classList.add('bingo')
+				})
+			})
+			this.win = true
+		}
+	}
 	check(singular, plural, item, lis) {
 		// rol = row + col
 		this[plural].forEach((rol, h) => {
 			// check each cell
-			if (item !== null && rol._data.indexOf(item.id) > -1) {
+			if ( (item !== null && rol._data.indexOf(item.id) > -1) ||  item === null) {
 				// was the clicked card in one of these cells?
-				let sum = []
-				rol._data.forEach(i => {
-					// add up all crossed out items
-					let card = this.listValue[i]
-					sum.push(card.checked ? 1 : 0)
-				})
-				if ( arraySum(sum) > 4 ) {
-					let classname = `${singular}${h+1}`
-					document.querySelectorAll(`.${classname}`).forEach(cell => {
-						cell.classList.add('bingo')
-					})
-				}
-			}
-			else {
-				let sum = []
-				rol._data.forEach(i => {
-					// add up all crossed out items
-					let card = this.listValue[i]
-					sum.push(card.checked ? 1 : 0)
-				})
-				if ( arraySum(sum) > 4 ) {
-					let classname = `${singular}${h+1}`
-					setTimeout(() => {
-						// Wait for dom to load
-						document.querySelectorAll(`.${classname}`).forEach(cell => {
-							cell.classList.add('bingo')
-						})
-					})
-				}
+				this.#check (rol, singular, h)
 			}
 		})
 	}
@@ -150,5 +141,7 @@ export default class Bingo {
 		this.check('row', 'rows', listValue[i] || null, liList)
 		this.check('col', 'cols', listValue[i] || null, liList)
 		this.check('diag', 'diag', listValue[i] || null, liList)
+
+		return this.win
 	}
 }
