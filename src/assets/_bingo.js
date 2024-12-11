@@ -60,6 +60,9 @@ export default class Bingo {
 		// --- Comment out when not in use
 		// if (import.meta.env.VITE_MODE === 'development') { this.progress.reset() }
 	}
+	winCond(keyword) {
+		return this[keyword][0]._data
+	}
 	list() {
 		return this.listValue
 	}

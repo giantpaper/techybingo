@@ -1,4 +1,5 @@
 <template>
+	<h1>Week of {{ month[date.getMonth()] }}</h1>
 	<ul class="table">
 		<li v-for="(item, i) in list" :class="bingo.classes(i)" :ref="li => (liList[i] = li)">
 			<div class="free-space checked" v-if="i===12">
@@ -10,6 +11,21 @@
 			</label>
 		</li>
 	</ul>
+	<section class="win_cond">
+		<h3>Win Condition:</h3>
+		<figure>
+			<canvas width="75" height="75" class="win_row"></canvas>
+			<figcaption>Any row</figcaption>
+		</figure>
+		<figure>
+			<canvas width="75" height="75" class="win_col"></canvas>
+			<figcaption>Any column</figcaption>
+		</figure>
+		<figure>
+			<canvas width="75" height="75" class="win_diag"></canvas>
+			<figcaption>Any diagonal</figcaption>
+		</figure>
+	</section>
 </template>
 <style lang="scss" scoped>
 	.table {
@@ -24,14 +40,14 @@
 		margin-top: 0;
 		margin-bottom: 0;
 		padding: 0;
-	}
-	li {
-		border-right: 2px var(--color-text) solid;
-		border-bottom: 2px var(--color-text) solid;
-		&.bingo {
-			background: #a20046;
-			.checked {
-				color: white;
+		li {
+			border-right: 2px var(--color-text) solid;
+			border-bottom: 2px var(--color-text) solid;
+			&.bingo {
+				background: var(--background-win);
+				.checked {
+					color: white;
+				}
 			}
 		}
 	}
@@ -70,6 +86,9 @@
 			appearance: none;
 		}
 	}
+	h3 {
+		margin-bottom: 0.5rem;
+	}
 	label {
 		cursor: pointer;
 	}
@@ -79,12 +98,50 @@
 	.table.disabled label {
 		cursor: default;
 	}
+	h3 {
+		font-weight: bold;
+	}
+	.win_cond {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+		h3 {
+			width: 100%;
+			text-align: center;
+		}
+		figure {
+			width: calc( (100% / 3) - 2rem );
+		}
+		canvas {
+			margin: 0 auto;
+			display: block;
+			aspect-ratio: 1/1;
+			object-fit: contain;
+		}
+		li {
+			list-style: none;
+			margin: 0;
+			background: #eee;
+			width: 100%;
+			aspect-ratio: 1/1;
+			&.win {
+				background: var(--background-win);
+			}
+		}
+		figcaption {
+			display: block;
+			text-align: center;
+		}
+	}
 </style>
 <script setup>
-import { ref } from "vue"
+import { ref, onMounted } from "vue"
 import DefaultValues from "../assets/_default.js"
 // import { updateProgress, getProgress, setProgress } from "../assets/_progress.js"
 import Bingo from "../assets/_bingo.js"
+import { range } from 'mathjs'
+import Canvas from '../assets/class.Canvas.js'
 
 const list = ref([]) // progress
 const liList = ref({}) // list of <li>
@@ -97,9 +154,47 @@ ifWin([], liList)
 
 const disabled = ref(false)
 
+onMounted(() => {
+	document.querySelectorAll('canvas').forEach((canvas, i) => {
+		let c = new Canvas(canvas)
+		let j = 0
+
+		range(0,5).forEach(exampleRow => {
+			range(0,5).forEach(exampleCol => {
+				let classname = null
+				let isDiagonal = [4, 8, 12, 16, 20]
+				if ((exampleRow === 0 && i === 0) || (exampleCol === 0 && i === 1) || (isDiagonal.indexOf(j) > -1 && i === 2)) {
+					classname = 'win'
+				}
+				c.rect(exampleCol, exampleRow, classname)
+				j++
+			})
+		})
+	})
+})
+
+const date = new Date()
+const month = [
+	`Jan.`,
+	`Feb.`,
+	`Mar.`,
+	`Apr.`,
+	`May`,
+	`June`,
+	`July`,
+	`Aug.`,
+	`Sept.`,
+	`Oct.`,
+	`Nov.`,
+	`Dec.`,
+]
+
+function getExampleWin(keyword, i) {
+	return bingo.winCond(keyword).includes(i)
+}
 function ifWin(list, liList, i) {
 	// Apparently this was running before the list = ref even had a chance to update
-	setTimeout(() => {
+	onMounted(() => {
 		let win = bingo.ifWin(list, liList, i)
 		list.value = bingo.list()
 		if (bingo.win === true) {
