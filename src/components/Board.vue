@@ -12,7 +12,7 @@
 		</li>
 	</ul>
 	<section class="win_cond">
-		<h3>Win Condition:</h3>
+		<h3>Win Conditions:</h3>
 		<figure>
 			<canvas width="75" height="75" class="win_row"></canvas>
 			<figcaption>Any row</figcaption>
@@ -142,7 +142,7 @@ import DefaultValues from "../assets/_default.js"
 import Bingo from "../assets/_bingo.js"
 import BingoDate from "../assets/_bingodate.js"
 import { range } from 'mathjs'
-import Canvas from '../assets/class.Canvas.js'
+import Canvas from '../assets/_canvas.js'
 
 const list = ref([]) // progress
 const liList = ref({}) // list of <li>

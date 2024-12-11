@@ -15,5 +15,5 @@
 	}
 </style>
 <script setup>
-	import Table from "./components/Table.vue"
+	import Table from "./components/Board.vue"
 </script>
