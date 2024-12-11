@@ -1,5 +1,5 @@
 <template>
-	<h1>Week of {{ month[date.getMonth()] }}</h1>
+	<h1>Week of {{ bingodate.month() + " "+ bingodate.week() }}</h1>
 	<ul class="table">
 		<li v-for="(item, i) in list" :class="bingo.classes(i)" :ref="li => (liList[i] = li)">
 			<div class="free-space checked" v-if="i===12">
@@ -140,6 +140,7 @@ import { ref, onMounted } from "vue"
 import DefaultValues from "../assets/_default.js"
 // import { updateProgress, getProgress, setProgress } from "../assets/_progress.js"
 import Bingo from "../assets/_bingo.js"
+import BingoDate from "../assets/_bingodate.js"
 import { range } from 'mathjs'
 import Canvas from '../assets/class.Canvas.js'
 
@@ -147,6 +148,7 @@ const list = ref([]) // progress
 const liList = ref({}) // list of <li>
 
 const bingo = new Bingo(list.value)
+const bingodate = new BingoDate()
 
 list.value = bingo.list()
 
@@ -174,20 +176,6 @@ onMounted(() => {
 })
 
 const date = new Date()
-const month = [
-	`Jan.`,
-	`Feb.`,
-	`Mar.`,
-	`Apr.`,
-	`May`,
-	`June`,
-	`July`,
-	`Aug.`,
-	`Sept.`,
-	`Oct.`,
-	`Nov.`,
-	`Dec.`,
-]
 
 function getExampleWin(keyword, i) {
 	return bingo.winCond(keyword).includes(i)
