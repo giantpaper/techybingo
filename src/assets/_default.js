@@ -43,8 +43,6 @@ export default function DefaultValues () {
 
 	let date = new BingoDate
 
-	console.log(date.checkWeek())
-
 	// Randomize dat array
 	shuffle(items.value)
 
