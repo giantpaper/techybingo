@@ -1,4 +1,4 @@
-import { checkWeek, shuffle, weekNumber } from "./_functions.js"
+import { checkWeek, shuffle } from "./_functions.js"
 import { ref } from 'vue'
 import Progress from "./_progress.js"
 
