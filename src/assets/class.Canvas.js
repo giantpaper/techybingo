@@ -9,7 +9,7 @@ export default class Canvas {
 		this.canvas = canvas
 		this.config = {
 			bgColor: '#dddddd',
-			bgColor__win: '#a20046',
+			bgColor__win: '#c7315f',
 			cols: 5,
 			rows: 5,
 			gap: 1,
