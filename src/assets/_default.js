@@ -34,7 +34,7 @@ const items = ref([
 	`*sound of someone typing on a call...possibly with a hammer*`,
 	`Said or heard "Can you email that to me?" on a call`,
 	`You/Someone uses a custom background on a call`,
-	`Helpscout/Github/Shopify/Cloudflare is down`,
+	`Helpscout/Github/Shopify/Cloudflare/Gmail is down`,
 ])
 
 export default function DefaultValues () {
