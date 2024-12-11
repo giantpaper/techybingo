@@ -1,6 +1,5 @@
 import { checkWeek, shuffle, weekNumber } from "./_functions.js"
 import { ref } from 'vue'
-import BingoDate from "./_bingodate.js"
 import Progress from "./_progress.js"
 
 const items = ref([

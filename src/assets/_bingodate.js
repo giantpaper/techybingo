@@ -32,7 +32,8 @@ export default class BingoDate {
 	}
 	weekNumber() {
 		// https://www.geeksforgeeks.org/calculate-current-week-number-in-javascript/
-		const date = this.date
+		const currentDate =
+				(typeof date === 'object') ? date : new Date();
 		const januaryFirst =
 				new Date(currentDate.getFullYear(), 0, 1);
 		const daysToNextMonday =

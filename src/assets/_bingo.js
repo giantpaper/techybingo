@@ -1,6 +1,7 @@
 import { range } from 'mathjs'
 import { ref } from 'vue'
 
+import BingoDate from "./_bingodate.js"
 import Progress from "./_progress.js"
 
 const arraySum = (arr) => {

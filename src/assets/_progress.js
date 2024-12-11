@@ -1,9 +1,16 @@
 import DefaultValues from "./_default.js"
+import BingoDate from './_bingodate.js'
 
 export default class Progress {
 	constructor (listValue) {
 		if (!this.listValue) {
 			this.listValue = listValue
+		}
+		this.date = new BingoDate
+
+		// Check if a new week
+		if (this.ifNewWeek() === true) {
+			this.reset()
 		}
 	}
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties
@@ -18,6 +25,16 @@ export default class Progress {
 	}
 	get () {
 		return JSON.parse(localStorage.getItem('progress'))
+	}
+
+
+	ifNewWeek (){
+		if (parseInt(localStorage.getItem('currentWeek')) === this.date.weekNumber()) {
+			return false
+		}
+		// If it made it this far, it's probably a new week, so updating....
+		localStorage.setItem('currentWeek', this.date.weekNumber())
+		return true
 	}
 	update(newListValue) {
 		// newListValue/this.listValue might be blank on page load, so grabbing the stored value from localStorage

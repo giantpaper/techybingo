@@ -15,13 +15,6 @@ export function weekNumber() {
 	(currentDate - nextMonday) / (24 * 3600 * 1000) / 7) : 1);
 }
 
-
-export function ifNewWeek (){
-	if (localStorage.getItem('currentWeek') === null) {
-		localStorage.setItem('currentWeek', weekNumber())
-	}
-}
-
 export function shuffle(array) {
 	let currentIndex = array.length;
 
