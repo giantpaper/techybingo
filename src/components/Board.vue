@@ -5,9 +5,9 @@
 			<div class="free-space checked" v-if="i===12">
 				Free Space
 			</div>
-			<label v-else :class="{ checked: item.checked, }">
-				<input type="checkbox" v-model="item.checked" @click="ifWin(list, liList, i)" v-if="disabled===false" />
-				{{ item.label }}
+			<label v-else :class="{ checked: item.checked, }" @click="ifWin(list, liList, i, 'clicked')">
+				<input type="checkbox" v-model="item.checked" v-if="disabled===false" />
+				<span v-html="item.label"></span>
 			</label>
 		</li>
 	</ul>

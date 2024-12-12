@@ -51,6 +51,8 @@ export default function DefaultValues () {
 	items.value = items.value.slice(0, 25)
 
 	items.value.forEach(item => {
+		// Fixes obscenely-long text not breaking
+		item = item.replace(/\//g, "/<wbr>")
 		// Make sure free space is always checked
 		let newItem = { id: i++, label: item, checked: item === `Free Space` ? true : false, bingo: false, }
 		l.push(newItem)
