@@ -28,7 +28,6 @@ export default class Progress {
 	#set (newListValue) {
 		this.listValue = newListValue || DefaultValues()
 		localStorage.setItem('progress', JSON.stringify(this.listValue))
-		console.log('set()', JSON.stringify(this.listValue))
 		return this.listValue
 	}
 	get () {
