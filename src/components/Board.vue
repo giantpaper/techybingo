@@ -12,7 +12,7 @@
 		</li>
 	</ul>
 	<section class="win_cond">
-		<h3>Win Conditions:</h3>
+		<h2>Win Conditions:</h2>
 		<figure>
 			<canvas width="75" height="75" class="win_row"></canvas>
 			<figcaption>Any row</figcaption>
@@ -86,8 +86,10 @@
 			appearance: none;
 		}
 	}
-	h3 {
+	h2 {
+		font-size: 1.125rem;
 		margin-bottom: 0.5rem;
+		font-weight: bold;
 	}
 	label {
 		cursor: pointer;
@@ -99,15 +101,12 @@
 	.table.disabled label {
 		cursor: default;
 	}
-	h3 {
-		font-weight: bold;
-	}
 	.win_cond {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
 		justify-content: center;
-		h3 {
+		h2 {
 			width: 100%;
 			text-align: center;
 		}
