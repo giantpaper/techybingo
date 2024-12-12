@@ -1,5 +1,6 @@
 import DefaultValues from "./_default.js"
 import BingoDate from './_bingodate.js'
+import { onMounted } from 'vue'
 
 export default class Progress {
 	constructor (listValue) {
@@ -27,6 +28,7 @@ export default class Progress {
 	#set (newListValue) {
 		this.listValue = newListValue || DefaultValues()
 		localStorage.setItem('progress', JSON.stringify(this.listValue))
+		console.log('set()', JSON.stringify(this.listValue))
 		return this.listValue
 	}
 	get () {
@@ -38,10 +40,9 @@ export default class Progress {
 			return false
 		}
 		else {
-			// If it made it this far, it's probably a new week, so updating....
 			localStorage.setItem('currentWeek', this.date.weekNumber())
+			return true
 		}
-		return true
 	}
 	update(newListValue) {
 		// newListValue/this.listValue might be blank on page load, so grabbing the stored value from localStorage
@@ -52,6 +53,8 @@ export default class Progress {
 	#reset () {
 		localStorage.removeItem('currentWeek')
 		localStorage.removeItem('progress')
+		// Automatically set the current week number after resetting
+		localStorage.setItem('currentWeek', this.date.weekNumber())
 		this.#set()
 		return this.listValue
 	}

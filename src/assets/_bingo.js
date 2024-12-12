@@ -53,7 +53,7 @@ export default class Bingo {
 			],
 		}
 		this.progress = new Progress(cardsValue)
-		this.listValue = this.progress.update(cardsValue)
+		this.listValue = this.progress.update(this.progress.get())
 	}
 	winCond(keyword) {
 		return this[keyword][0]._data
@@ -102,7 +102,7 @@ export default class Bingo {
 			this.win = true
 		}
 	}
-	check(singular, plural, item, lis) {
+	check(singular, plural, item) {
 		// rol = row + col
 		this[plural].forEach((rol, h) => {
 			// check each cell
@@ -112,12 +112,14 @@ export default class Bingo {
 			}
 		})
 	}
-	ifWin(listValue, liList, i) {
-		this.listValue = this.progress.update(listValue)
+	ifWin(listValue, i, event) {
+		if (event === 'clicked') {
+			this.listValue = this.progress.update(listValue)
+		}
 		// check each row
-		this.check('row', 'rows', listValue[i] || null, liList)
-		this.check('col', 'cols', listValue[i] || null, liList)
-		this.check('diag', 'diag', listValue[i] || null, liList)
+		this.check('row', 'rows', listValue[i] || null)
+		this.check('col', 'cols', listValue[i] || null)
+		this.check('diag', 'diag', listValue[i] || null)
 
 		return this.win
 	}

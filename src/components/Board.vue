@@ -5,8 +5,8 @@
 			<div class="free-space checked" v-if="i===12">
 				Free Space
 			</div>
-			<label v-else :class="{ checked: item.checked, }" @click="ifWin(list, liList, i, 'clicked')">
-				<input type="checkbox" v-model="item.checked" v-if="disabled===false" />
+			<label v-else :class="{ checked: item.checked, }">
+				<input type="checkbox" v-model="item.checked" @click="ifWin(list, i, 'clicked')" v-if="disabled===false" />
 				<span v-html="item.label"></span>
 			</label>
 		</li>
@@ -91,6 +91,7 @@
 	}
 	label {
 		cursor: pointer;
+		overflow-wrap: break-all;
 	}
 	.free-space {
 		background: rgba(0,0,0,0.125) !important;
@@ -145,16 +146,15 @@ import { range } from 'mathjs'
 import Canvas from '../assets/_canvas.js'
 
 const list = ref([]) // progress
-const liList = ref({}) // list of <li>
+const liList = ref([])
+const disabled = ref(false)
 
 const bingo = new Bingo(list.value)
 const bingodate = new BingoDate()
 
 list.value = bingo.list()
 
-ifWin([], liList)
-
-const disabled = ref(false)
+ifWin(list.value)
 
 onMounted(() => {
 	document.querySelectorAll('canvas').forEach((canvas, i) => {
@@ -180,10 +180,11 @@ const date = new Date()
 function getExampleWin(keyword, i) {
 	return bingo.winCond(keyword).includes(i)
 }
-function ifWin(list, liList, i) {
+function ifWin(list, i, event) {
 	// Apparently this was running before the list = ref even had a chance to update
-	onMounted(() => {
-		let win = bingo.ifWin(list, liList, i)
+	// For some reason, setTimeout() works and onMounted() doesn't. I dunno why
+	setTimeout(() => {
+		let win = bingo.ifWin(list, i, event)
 		list.value = bingo.list()
 		if (bingo.win === true) {
 			// Disable board if bingo is reached
