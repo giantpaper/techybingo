@@ -69,45 +69,24 @@ export default class Bingo {
 	}
 	classes(i) {
 		let classes = []
+		// check rows
+		range(0,5)._data.forEach(j => {
+			if (this.rows[j]._data.indexOf(i) > -1) {
+				classes.push(`row${j+1}`)
+			}
+		})
 		// check columns
-		if (this.rows[0]._data.indexOf(i) > -1) {
-			classes.push('row1')
-		}
-		else if (this.rows[1]._data.indexOf(i) > -1) {
-			classes.push('row2')
-		}
-		else if (this.rows[2]._data.indexOf(i) > -1) {
-			classes.push('row3')
-		}
-		else if (this.rows[3]._data.indexOf(i) > -1) {
-			classes.push('row4')
-		}
-		else if (this.rows[4]._data.indexOf(i) > -1) {
-			classes.push('row5')
-		}
-		// check columns
-		if (this.cols[0]._data.indexOf(i) > -1) {
-			classes.push('col1')
-		}
-		else if (this.cols[1]._data.indexOf(i) > -1) {
-			classes.push('col2')
-		}
-		else if (this.cols[2]._data.indexOf(i) > -1) {
-			classes.push('col3')
-		}
-		else if (this.cols[3]._data.indexOf(i) > -1) {
-			classes.push('col4')
-		}
-		else if (this.cols[4]._data.indexOf(i) > -1) {
-			classes.push('col5')
-		}
+		range(0,5)._data.forEach(j => {
+			if (this.cols[j]._data.indexOf(i) > -1) {
+				classes.push(`col${j+1}`)
+			}
+		})
 		// check diagonals
-		if (this.diag[0]._data.indexOf(i) > -1) {
-			classes.push('diag1')
-		}
-		if (this.diag[1]._data.indexOf(i) > -1) {
-			classes.push('diag2')
-		}
+		range(0,2)._data.forEach(j => {
+			if (this.diag[j]._data.indexOf(i) > -1) {
+				classes.push(`diag${j+1}`)
+			}
+		})
 
 		return classes.join(' ')
 	}
