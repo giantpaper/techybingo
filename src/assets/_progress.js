@@ -20,8 +20,8 @@ export default class Progress {
 	#set (newListValue) {
 		this.listValue = newListValue || DefaultValues()
 		localStorage.setItem('progress', JSON.stringify(this.listValue))
+		console.log(this.listValue)
 		return this.listValue
-		// localStorage.setItem('currentWeek', datetime.getWeekNumber())
 	}
 	get () {
 		return JSON.parse(localStorage.getItem('progress'))
@@ -29,11 +29,14 @@ export default class Progress {
 
 
 	ifNewWeek (){
+		console.log(localStorage.getItem('currentWeek'), this.date.weekNumber())
 		if (parseInt(localStorage.getItem('currentWeek')) === this.date.weekNumber()) {
 			return false
 		}
-		// If it made it this far, it's probably a new week, so updating....
-		localStorage.setItem('currentWeek', this.date.weekNumber())
+		else {
+			// If it made it this far, it's probably a new week, so updating....
+			localStorage.setItem('currentWeek', this.date.weekNumber())
+		}
 		return true
 	}
 	update(newListValue) {
@@ -41,7 +44,6 @@ export default class Progress {
 		this.listValue = this.#set(newListValue.length > 0 ? newListValue : this.get())
 
 		return this.listValue
-		// localStorage.setItem('currentWeek', datetime.getWeekNumber())
 	}
 	reset () {
 		localStorage.removeItem('currentWeek')
