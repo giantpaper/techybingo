@@ -10,7 +10,7 @@ export default class Progress {
 
 		// Check if a new week
 		if (this.ifNewWeek() === true) {
-			this.reset()
+			this.#reset()
 		}
 
 		// ONLY FOR DEBUGGING PURPOSES!!!
@@ -23,7 +23,7 @@ export default class Progress {
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties
 	// Needs to be private so it does not get used outside the Progress class
 	// For outside classs use, use .update() instead
-	// Or .reset() if all progress needs to be cleared/gameboard needs to change
+	// Or .#reset() if all progress needs to be cleared/gameboard needs to change
 	#set (newListValue) {
 		this.listValue = newListValue || DefaultValues()
 		localStorage.setItem('progress', JSON.stringify(this.listValue))
@@ -52,7 +52,7 @@ export default class Progress {
 
 		return this.listValue
 	}
-	reset () {
+	#reset () {
 		localStorage.removeItem('currentWeek')
 		localStorage.removeItem('progress')
 		this.#set()
