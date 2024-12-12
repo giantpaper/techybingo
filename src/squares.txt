@@ -28,4 +28,6 @@ Said or heard "Hey guys, I have to jump on another call"
 Said or heard "I think there's lag"
 *sound of someone typing on a call...possibly with a hammer*
 Said or heard "Can you email that to me?" on a call
-Someone uses a custom background on a call
+You/Someone uses a custom background on a call
+Helpscout/Github/Shopify/Cloudflare/Gmail is down
+Asked a client "Did you clear your cache?"
