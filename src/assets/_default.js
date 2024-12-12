@@ -41,8 +41,6 @@ export default function DefaultValues () {
 	let l = []
 	let i = 0
 
-	let date = new BingoDate
-
 	// Randomize dat array
 	shuffle(items.value)
 
