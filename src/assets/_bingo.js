@@ -56,7 +56,7 @@ export default class Bingo {
 		this.listValue = this.progress.update(cardsValue)
 
 		// ONLY FOR DEBUGGING PURPOSES!!!
-		// This resets bingo progress by clearing out the localStorage
+		// This resets everyone's bingo progress by clearing out the localStorage
 		// --- Keep the conditional intact to make sure it doesn't run in production
 		// --- Comment out when not in use
 		// if (import.meta.env.VITE_MODE === 'development') { this.progress.reset() }
