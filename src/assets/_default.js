@@ -10,8 +10,6 @@ export default function DefaultValues () {
 	let l = []
 	let i = 0
 
-	const items = ref(squares)
-
 	// Randomize dat array
 	shuffle(squares)
 
