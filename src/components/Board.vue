@@ -123,7 +123,6 @@
 	}
 </style>
 <script setup>
-import { ref, onMounted } from "vue"
 import DefaultValues from "../assets/_default.js"
 // import { updateProgress, getProgress, setProgress } from "../assets/_progress.js"
 import Bingo from "../assets/_bingo.js"
