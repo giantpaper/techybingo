@@ -3,15 +3,15 @@
 	<section class="win_cond">
 		<h2>Win Conditions:</h2>
 		<figure>
-			<img src="@/assets/win_row.png" width="75" height="75" class="win_row" />
+			<img src="@/assets/win_row.svg" width="75" height="75" class="win_row" />
 			<figcaption>Any row</figcaption>
 		</figure>
 		<figure>
-			<img src="@/assets/win_col.png" width="75" height="75" class="win_col" />
+			<img src="@/assets/win_col.svg" width="75" height="75" class="win_col" />
 			<figcaption>Any column</figcaption>
 		</figure>
 		<figure>
-			<img src="@/assets/win_diag.png" width="75" height="75" class="win_diag" />
+			<img src="@/assets/win_diag.svg" width="75" height="75" class="win_diag" />
 			<figcaption>Any diagonal</figcaption>
 		</figure>
 	</section>
