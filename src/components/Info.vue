@@ -13,6 +13,14 @@
 	
 			<ul>
 				<li>Phrases do not have to be exact! "Are you available for a call?", "Please call me", etc is the same as <em>Client said "can we get on a call?"</em></li>
+				<li>Progress resets every Sunday 12:00am your local time. This means all squares will be randomized, checked off squares with be unchecked, and bingo status reset.</li>
+			</ul>
+			
+			<h2>The Technical Deets</h2>
+			
+			<ul>
+				<li>Progress (squares checked, bingo status, square positions) are all stored via the browser's local storage. So progress won't carry over to other devices.</li>
+				<li>It's best played on a large display (like a desktop computer, laptop, giant tablet, etc).</li>
 			</ul>
 		</div>
 	</section>
