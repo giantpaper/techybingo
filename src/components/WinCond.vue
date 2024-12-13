@@ -3,7 +3,7 @@
 	<section class="win_cond">
 		<h2>Win Conditions:</h2>
 		<figure>
-			<img src="@/assets/win_row.svg" width="75" height="75" class="win_row" />
+			<img src="@/assets/win_row.svg" width="75" height="75" alt="" class="win_row" />
 			<figcaption>Any row</figcaption>
 		</figure>
 		<figure>
