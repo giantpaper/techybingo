@@ -22,7 +22,7 @@
 		grid-template-columns: repeat(5, 1fr);
 		margin: 0 auto;
 		width: 100%;
-		max-width: 700px;
+		max-width: 710px;
 		list-style: none;
 		margin-top: 0;
 		margin-bottom: 0;
