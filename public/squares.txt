@@ -1,5 +1,6 @@
 Asked a client "Did you clear your cache?"
 Call interrupted by pet or family member
+Client exerts "I want to talk to your manager" energy
 Client is a no-show for a call
 Client said "can we get on a call?"
 Client's site is ancient with outdated software/dependencies/plugins
@@ -8,6 +9,7 @@ Did household chores on your lunchbreak
 Forgot to attach a file to an email
 Forgot to update your Slack status from 'away' to 'active' after lunch
 Get asked to help with household chores during work
+Got takeout/went out to eat for lunch
 Got up to refill your waterbottle
 Had a mini-Friday celebration
 Helpscout/Github/Shopify/Cloudflare/Gmail is down
