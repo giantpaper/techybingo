@@ -1,0 +1,51 @@
+<template>
+	
+	<section class="win_cond">
+		<h2>Win Conditions:</h2>
+		<figure>
+			<img src="@/assets/win_row.png" width="75" height="75" class="win_row" />
+			<figcaption>Any row</figcaption>
+		</figure>
+		<figure>
+			<img src="@/assets/win_col.png" width="75" height="75" class="win_col" />
+			<figcaption>Any column</figcaption>
+		</figure>
+		<figure>
+			<img src="@/assets/win_diag.png" width="75" height="75" class="win_diag" />
+			<figcaption>Any diagonal</figcaption>
+		</figure>
+	</section>
+</template>
+<style lang="scss" scoped>
+	.win_cond {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+		h2 {
+			width: 100%;
+			text-align: center;
+		}
+		figure {
+			width: calc( (100% / 3) - 2rem );
+		}
+		img {
+			margin: 0 auto;
+			display: block;
+		}
+		li {
+			list-style: none;
+			margin: 0;
+			background: #eee;
+			width: 100%;
+			aspect-ratio: 1/1;
+			&.win {
+				background: var(--background-win);
+			}
+		}
+		figcaption {
+			display: block;
+			text-align: center;
+		}
+	}
+</style>

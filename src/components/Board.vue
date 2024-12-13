@@ -11,21 +11,8 @@
 			</label>
 		</li>
 	</ul>
-	<section class="win_cond">
-		<h2>Win Conditions:</h2>
-		<figure>
-			<canvas width="75" height="75" class="win_row"></canvas>
-			<figcaption>Any row</figcaption>
-		</figure>
-		<figure>
-			<canvas width="75" height="75" class="win_col"></canvas>
-			<figcaption>Any column</figcaption>
-		</figure>
-		<figure>
-			<canvas width="75" height="75" class="win_diag"></canvas>
-			<figcaption>Any diagonal</figcaption>
-		</figure>
-	</section>
+	<WinCond />
+	<Info />
 </template>
 <style lang="scss" scoped>
 	.table {
@@ -143,6 +130,7 @@ import Bingo from "../assets/_bingo.js"
 import BingoDate from "../assets/_bingodate.js"
 import { range } from 'mathjs'
 import Canvas from '../assets/_canvas.js'
+import WinCond from './WinCond.vue'
 
 const list = ref([]) // progress
 const liList = ref([])
