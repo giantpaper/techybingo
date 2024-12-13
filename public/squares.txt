@@ -25,7 +25,6 @@ Said or heard "I think there's lag"
 Said or heard "Sorry, I was on mute"
 Sent a gif to coworker(s)
 Sent a meme to coworker(s)
-Someone says "good morning" to everyone
 *sound of someone typing on a call...possibly with a hammer*
 Sudden power outage
 Took a coffee break (or 2...or...3)
@@ -35,4 +34,5 @@ Worked in your backyard
 You really did work in your pajamas
 You/Someone else followed up for an update on a task
 You/Someone else forgets what day it is.
+You/Someone else says "good morning" to everyone
 You/Someone else uses a custom background on a call
