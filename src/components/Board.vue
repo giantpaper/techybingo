@@ -88,41 +88,9 @@
 	.table.disabled label {
 		cursor: default;
 	}
-	.win_cond {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1rem;
-		justify-content: center;
-		h2 {
-			width: 100%;
-			text-align: center;
-		}
-		figure {
-			width: calc( (100% / 3) - 2rem );
-		}
-		canvas {
-			margin: 0 auto;
-			display: block;
-			aspect-ratio: 1/1;
-			object-fit: contain;
-		}
-		li {
-			list-style: none;
-			margin: 0;
-			background: #eee;
-			width: 100%;
-			aspect-ratio: 1/1;
-			&.win {
-				background: var(--background-win);
-			}
-		}
-		figcaption {
-			display: block;
-			text-align: center;
-		}
-	}
 </style>
 <script setup>
+import { ref } from "vue"
 import DefaultValues from "../assets/_default.js"
 // import { updateProgress, getProgress, setProgress } from "../assets/_progress.js"
 import Bingo from "../assets/_bingo.js"
