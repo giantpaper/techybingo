@@ -43,6 +43,7 @@
 	label {
 		aspect-ratio: 1/1;
 		display: flex;
+		font-size: calc(14rem / 16);
 		align-items: center;
 		justify-content: center;
 		text-align: center;
