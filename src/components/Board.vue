@@ -130,6 +130,8 @@ import Bingo from "../assets/_bingo.js"
 import BingoDate from "../assets/_bingodate.js"
 import { range } from 'mathjs'
 import Canvas from '../assets/_canvas.js'
+
+import Info from './Info.vue'
 import WinCond from './WinCond.vue'
 
 const list = ref([]) // progress
