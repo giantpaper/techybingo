@@ -33,5 +33,6 @@ Used an emoji in an email
 Used the pomodoro technique
 Worked in your backyard
 You really did work in your pajamas
-You/Someone forgets what day it is.
-You/Someone uses a custom background on a call
+You/Someone else followed up for an update on a task
+You/Someone else forgets what day it is.
+You/Someone else uses a custom background on a call
