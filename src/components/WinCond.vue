@@ -7,11 +7,11 @@
 			<figcaption>Any row</figcaption>
 		</figure>
 		<figure>
-			<img src="@/assets/win_col.svg" width="75" height="75" class="win_col" />
+			<img src="@/assets/win_col.svg" width="75" height="75" alt="" class="win_col" />
 			<figcaption>Any column</figcaption>
 		</figure>
 		<figure>
-			<img src="@/assets/win_diag.svg" width="75" height="75" class="win_diag" />
+			<img src="@/assets/win_diag.svg" width="75" height="75" alt="" class="win_diag" />
 			<figcaption>Any diagonal</figcaption>
 		</figure>
 	</section>
