@@ -2,6 +2,7 @@ Asked a client "Did you clear your cache?"
 Call interrupted by pet or family member
 Client exerts "I want to talk to your manager" energy
 Client is a no-show for a call
+Client is extremely vague about a request
 Client said "can we get on a call?"
 Client's site is ancient with outdated software/dependencies/plugins
 Created a workday playlist
