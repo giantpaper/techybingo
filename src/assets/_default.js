@@ -2,13 +2,9 @@ import { checkWeek, shuffle } from "./_functions.js"
 import { ref } from 'vue'
 import Progress from "./_progress.js"
 
-const squares = await fetch(`/src/squares.txt`)
+const squares = await fetch(`./squares.txt`)
 		.then(response => response.text())
-		.then(data => {
-			return data.split("\n")
-		})
-
-const items = ref(squares)
+		.then(data => data.split("\n"))
 
 // const items = ref([
 // 	`Bikers at the Moose Lodge`,
@@ -28,22 +24,27 @@ export default function DefaultValues () {
 	let l = []
 	let i = 0
 
+	const items = ref(squares)
+
 	// Randomize dat array
-	shuffle(items.value)
+	shuffle(squares)
 
-	// Add obligatory free space
-	items.value.splice(12, 0, `Free Space`)
+	// Add obligatory free space if not added already
+	if (squares.indexOf(`Free Space`) < 0) {
+		squares.splice(12, 0, `Free Space`)
+	}
 
-	// chop off the extras so there's only 25 squares
-	items.value = items.value.slice(0, 25)
-
-	items.value.forEach(item => {
-		// Fixes obscenely-long text not breaking
-		item = item.replace(/\//g, "/<wbr>")
-		// Make sure free space is always checked
-		let newItem = { id: i++, label: item, checked: item === `Free Space` ? true : false, bingo: false, }
-		l.push(newItem)
+	squares.forEach(square => {
+		// Ignore blank lines
+		if (square !== '') {
+			// Fixes obscenely-long text not breaking
+			square = square.replace(/\//g, "/<wbr>")
+			// Make sure free space is always checked
+			let newItem = { id: i++, label: square, checked: square === `Free Space` ? true : false, bingo: false, }
+			l.push(newItem)
+		}
 	})
 
-	return l
+	// chop off the extras so there's only 25 squares and return everything
+	return l.slice(0, 25)
 }

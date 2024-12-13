@@ -1,0 +1,34 @@
+Asked a client "Did you clear your cache?"
+Call interrupted by pet or family member
+Client is a no-show for a call
+Client said "can we get on a call?"
+Client's site is ancient with outdated software/dependencies/plugins
+Created a workday playlist
+Did household chores on your lunchbreak
+Forgot to attach a file to an email
+Forgot to update your Slack status from 'away' to 'active' after lunch
+Get asked to help with household chores during work
+Got up to refill your waterbottle
+Had a mini-Friday celebration
+Helpscout/Github/Shopify/Cloudflare/Gmail is down
+Internet is having issues so you book it to a coffee shop
+Joked about how long your "commute" is
+Needed to restart after computer glitches/crashes
+Said "lol" and meant it
+Said or heard "Can everyone see my screen?"
+Said or heard "Can you email that to me?" on a call
+Said or heard "Does this need a quote?"
+Said or heard "Hey guys, I have to jump on another call"
+Said or heard "I think there's lag"
+Said or heard "Sorry, I was on mute"
+Sent a gif to coworker(s)
+Sent a meme to coworker(s)
+Someone says "good morning" to everyone
+*sound of someone typing on a call...possibly with a hammer*
+Sudden power outage
+Took a coffee break (or 2...or...3)
+Used an emoji in an email
+Used the pomodoro technique
+Worked in your pajamas
+You/Someone forgets what day it is.
+You/Someone uses a custom background on a call
