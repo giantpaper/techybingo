@@ -30,6 +30,7 @@
 		li {
 			border-right: 2px var(--color-text) solid;
 			border-bottom: 2px var(--color-text) solid;
+			transition: background 0.2s;
 			&.bingo {
 				background: var(--background-win);
 				.checked {
