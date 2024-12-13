@@ -76,7 +76,6 @@
 	}
 	label {
 		cursor: pointer;
-		overflow-wrap: break-all;
 	}
 	.free-space {
 		background: rgba(0,0,0,0.125) !important;
