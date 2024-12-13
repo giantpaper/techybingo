@@ -73,11 +73,6 @@
 			appearance: none;
 		}
 	}
-	h2 {
-		font-size: 1.125rem;
-		margin-bottom: 0.5rem;
-		font-weight: bold;
-	}
 	label {
 		cursor: pointer;
 		overflow-wrap: break-all;
