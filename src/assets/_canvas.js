@@ -2,10 +2,6 @@ export default class Canvas {
 	constructor (canvas) {
 		this.c = canvas.getContext('2d')
 
-		addEventListener('resize', () => {
-			canvas.width = innerWidth
-			canvas.height = innerHeight
-		})
 		this.canvas = canvas
 		this.config = {
 			bgColor: '#dddddd',
