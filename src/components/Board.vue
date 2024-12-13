@@ -2,8 +2,8 @@
 	<h1>Week of {{ bingodate.month() + " "+ bingodate.week() }}</h1>
 	<ul class="table">
 		<li v-for="(item, i) in list" :class="bingo.classes(i)" :ref="li => (liList[i] = li)">
-			<div class="free-space checked" v-if="i===12">
-				Free Space
+			<div class="free-space checked" v-if="item.label===`Free Space`">
+				FREE SPACE
 			</div>
 			<label v-else :class="{ checked: item.checked, }">
 				<input type="checkbox" v-model="item.checked" @click="ifWin(list, i, 'clicked')" v-if="disabled===false" />
