@@ -6,20 +6,6 @@ const squares = await fetch(`./squares.txt`)
 		.then(response => response.text())
 		.then(data => data.split("\n"))
 
-// const items = ref([
-// 	`Bikers at the Moose Lodge`,
-// 	`Got up to refill your water`,
-// 	`"axe me a high question"`,
-// 	`Another fire on WatchDuty`,
-// 	`Saw a spider`,
-// 	`Cat battle outside`,
-// 	`Sonic boom outside`,
-// 	`Saw a raccoon`,
-// 	`Healer in Marvel Rivals doesn't know how to heal`,
-// 	`References The Good Place`,
-// 	`Sudden power outage`,
-// ])
-
 export default function DefaultValues () {
 	let l = []
 	let i = 0
