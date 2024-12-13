@@ -92,7 +92,6 @@ import DefaultValues from "../assets/_default.js"
 import Bingo from "../assets/_bingo.js"
 import BingoDate from "../assets/_bingodate.js"
 import { range } from 'mathjs'
-import Canvas from '../assets/_canvas.js'
 
 import Info from './Info.vue'
 import WinCond from './WinCond.vue'
@@ -107,25 +106,6 @@ const bingodate = new BingoDate()
 list.value = bingo.list()
 
 ifWin(list.value)
-
-onMounted(() => {
-	document.querySelectorAll('canvas').forEach((canvas, i) => {
-		let c = new Canvas(canvas)
-		let j = 0
-
-		range(0,5).forEach(exampleRow => {
-			range(0,5).forEach(exampleCol => {
-				let classname = null
-				let isDiagonal = [4, 8, 12, 16, 20]
-				if ((exampleRow === 0 && i === 0) || (exampleCol === 0 && i === 1) || (isDiagonal.indexOf(j) > -1 && i === 2)) {
-					classname = 'win'
-				}
-				c.rect(exampleCol, exampleRow, classname)
-				j++
-			})
-		})
-	})
-})
 
 const date = new Date()
 
