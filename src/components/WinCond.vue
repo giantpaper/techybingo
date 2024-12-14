@@ -21,7 +21,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
-		justify-content: center;
+		justify-content: space-between;
 		figure {
 			width: calc( (100% / 3) - 2rem );
 		}
