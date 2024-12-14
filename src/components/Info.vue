@@ -48,6 +48,12 @@
 			width: auto;
 		}
 	}
+	h2 {
+		margin-top: 2rem;
+		padding-bottom: 0.5rem;
+		padding-left: 3rem;
+		margin-left: -3rem;
+	}
 	#info {
 		background: var(--vt-c-black);
 		transition: width 0.3s;
