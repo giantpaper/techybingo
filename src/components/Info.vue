@@ -69,9 +69,10 @@
 			z-index: 10;
 	
 		#info_content {
-			padding: 3rem 5rem;
 			visibility: hidden;
-			font-size: 1.0625rem;
+			font-size: 1rem;
+			line-height: 160%;
+			padding: 3rem 5rem;
 			overflow-y: auto;
 			max-height: 100vh;
 			li {
