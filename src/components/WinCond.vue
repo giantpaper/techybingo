@@ -32,6 +32,9 @@
 		img {
 			margin: 0 auto;
 			display: block;
+			width: 100%;
+			aspect-ratio: 1/1;
+			height: auto;
 		}
 		li {
 			list-style: none;
