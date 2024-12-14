@@ -16,6 +16,14 @@ a,
   padding: 3px;
 }
 
+h1 {
+	font-weight: 800;
+	text-transform: uppercase;
+	span {
+		font-weight: inherit;
+		color: var(--color-accent);
+	}
+}
 
 h2 {
 	font-size: 1.25rem;
