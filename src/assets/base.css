@@ -35,8 +35,9 @@
 
   --section-gap: 160px;
 
+	--color-accent: #c7315f;
 
-	--background-win: #c7315f;
+	--background-win: var(--color-accent);
 }
 
 /* @media (prefers-color-scheme: dark) {
