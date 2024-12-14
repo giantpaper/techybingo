@@ -118,13 +118,6 @@ function ifWin(list, i, event) {
 	setTimeout(() => {
 		let win = bingo.ifWin(list, i, event)
 		list.value = bingo.list()
-		if (bingo.win === true) {
-			// Disable board if bingo is reached
-			document.querySelectorAll(`.table > li`).forEach(li => {
-				disabled.value = true
-				li.parentNode.classList.add('disabled')
-			})
-		}
 	})
 }
 
