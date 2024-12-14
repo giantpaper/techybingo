@@ -21,8 +21,8 @@
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		margin: 0 auto;
-		width: 100%;
-		max-width: 710px;
+		width: 710px;
+		aspect-ratio: 1/1;
 		list-style: none;
 		margin-top: 0;
 		margin-bottom: 0;
