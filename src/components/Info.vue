@@ -6,21 +6,21 @@
 	
 			<ol>
 				<li>Check off squares that apply throughout your week. Ex. If either Gmail, Helpscout, Github, etc go down, check off <em>Helpscout/<wbr>Github/<wbr>Shopify/<wbr>Cloudflare/<wbr>Gmail is down</em></li>
-				<li>Check off any row, any column or any diagonal and you've got BINGO (see Win Conditions diagrams).</li>
+				<li>Once you've filled up any row, and column, any diagonal (see Win Conditions) with checked items, you've got BINGO.</li>
 			</ol>
 	
 			<h2>FYI...</h2>
 	
 			<ul>
-				<li>Phrases do not have to be exact! "Are you available for a call?", "Please call me", etc is the same as <em>Client said "can we get on a call?"</em></li>
-				<li>Progress resets every Sunday 12:00am your local time. This means all squares will be randomized, checked off squares with be unchecked, and bingo status reset.</li>
+				<li><strong>Is "Are you available for a call?" or "Please call me" the same as <em>Client said "can we get on a call?"</em></strong>—Yes it is! Phrases don't need to be exact.</li>
+				<li><strong>How often is progress reset?</strong>—Every Sunday 12:00am your local time. This means all squares will be randomized, checked off squares with be unchecked, and bingo status reset.</li>
 			</ul>
 			
 			<h2>The Technical Deets</h2>
 			
 			<ul>
-				<li>Progress (squares checked, bingo status, square positions) are all stored via the browser's local storage. So progress won't carry over to other devices.</li>
-				<li>It's best played on a large display (like a desktop computer, laptop, giant tablet, etc).</li>
+				<li><strong>How is progress saved?</strong>—Squares checked, bingo status, and square positions are all stored via the browser's local storage. So progress won't carry over to other devices.</li>
+				<li><strong>How does this look on a mobile device?</strong>—Not great? The entire board gets squished. It's best played on a large display (like a desktop computer, laptop, giant tablet, etc).</li>
 			</ul>
 		</div>
 	</section>
