@@ -1,11 +1,11 @@
 @import './base.css';
 
-@import 'https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap';
 
 #app {
   margin: 0 auto;
-  font-weight: normal;
-	font: 0.9em 'Funnel Sans',sans-serif;
+  font-weight: 400;
+	font: 0.9em 'Open Sans',sans-serif;
 }
 
 a,
