@@ -44,6 +44,7 @@
 			}
 		}
 		figcaption {
+			margin-top: 0.25rem;
 			display: block;
 			text-align: center;
 		}
