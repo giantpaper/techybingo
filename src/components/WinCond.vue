@@ -1,5 +1,5 @@
 <template>
-	
+
 	<section class="win_cond">
 		<h2>Win Conditions:</h2>
 		<figure>
