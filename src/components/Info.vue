@@ -81,6 +81,7 @@
 		}
 		&.open {
 			width: 80%;
+			max-width: 900px;
 			#info_content {
 				visibility: visible;
 			}
