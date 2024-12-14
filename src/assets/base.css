@@ -87,7 +87,11 @@ body {
     'Helvetica Neue',
     sans-serif;
   font-size: 15px;
+	margin: 2rem 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+	&.menu_open {
+		overflow-y: hidden;
+	}
 }

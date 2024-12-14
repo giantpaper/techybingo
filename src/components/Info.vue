@@ -66,6 +66,8 @@
 			padding: 3rem 5rem;
 			visibility: hidden;
 			font-size: 1.0625rem;
+			overflow-y: auto;
+			max-height: 100vh;
 			li {
 				margin-bottom: 1rem;
 			}
@@ -84,5 +86,6 @@
 <script setup>
 	function toggleInfo(id) {
 		document.querySelector(id).classList.toggle('open')
+		document.querySelector('body').classList.toggle('menu_open')
 	}
 </script>
