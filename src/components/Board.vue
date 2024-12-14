@@ -13,6 +13,8 @@
 	</ul>
 	<WinCond />
 	<Info />
+
+	<Footer />
 </template>
 <style lang="scss" scoped>
 	.table {
@@ -95,6 +97,7 @@ import { range } from 'mathjs'
 
 import Info from './Info.vue'
 import WinCond from './WinCond.vue'
+import Footer from './Footer.vue'
 
 const list = ref([]) // progress
 const liList = ref([])
