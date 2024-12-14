@@ -1,6 +1,6 @@
 # Techybingo / Bingoscouts
 
-**File hierarchy**
+## File hierarchy
 App.vue -> ./src/components/Board.vue -> ./WinCond.vue
 
 ```
@@ -20,3 +20,15 @@ App.vue -> ./src/components/Board.vue -> ./WinCond.vue
 		Info.vue - The "info" slideout drawer
 		WinCond.vue - Brings up the "win condition" images, uses static images instead of a dynamically generated canvas (cuz of some weird bugs where if the computer went to sleep, the images would grow about 100x their size and become blank)
 ```
+
+## Adding new squares
+
+- Add them to ./public/squares.txt
+
+### Best Practices
+
+To avoid duplication:
+
+- Keep everything alphabetized
+- Maintain consistent phrasing.
+	- Ex. 'Said or heard "Good morning" to everyone' instead of 'You/Someone else says "Good morning" to everyone'
