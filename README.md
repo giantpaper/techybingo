@@ -31,4 +31,4 @@ To avoid duplication:
 
 - Keep everything alphabetized
 - Maintain consistent phrasing.
-	- Ex. 'Said or heard "Good morning" to everyone' instead of 'You/Someone else says "Good morning" to everyone'
+	- Ex. `Said or heard "Good morning" to everyone` instead of `You/Someone else says "Good morning" to everyone`
