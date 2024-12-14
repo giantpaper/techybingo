@@ -52,3 +52,10 @@ h3 {
 	margin-bottom: 0.5rem;
 	font-weight: bold;
 }
+
+strong {
+	font-weight: 700;
+	em {
+		font-weight: inherit;
+	}
+}
