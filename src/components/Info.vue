@@ -77,9 +77,6 @@
 			li {
 				margin-bottom: 1rem;
 			}
-			ol {
-	
-			}
 		}
 		&.open {
 			width: 80%;
