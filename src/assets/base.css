@@ -39,7 +39,10 @@
 
 	--background-win: var(--color-accent);
 }
-
+::selection {
+	background: var(--color-accent);
+	color: var(--vt-c-white);
+}
 /* @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
