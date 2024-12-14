@@ -21,7 +21,7 @@
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		margin: 0 auto;
-		width: 710px;
+		width: 100ch;
 		aspect-ratio: 1/1;
 		list-style: none;
 		margin-top: 0;
