@@ -22,10 +22,6 @@
 		flex-wrap: wrap;
 		gap: 1rem;
 		justify-content: center;
-		h2 {
-			width: 100%;
-			text-align: center;
-		}
 		figure {
 			width: calc( (100% / 3) - 2rem );
 		}
