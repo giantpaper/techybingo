@@ -31,20 +31,22 @@ export default class BingoDate {
 		return `${sunday} - ${saturday}`
 	}
 	weekNumber() {
+		// Based off of
 		// https://www.geeksforgeeks.org/calculate-current-week-number-in-javascript/
-		const currentDate =
-				(typeof date === 'object') ? date : new Date();
-		const januaryFirst =
-				new Date(currentDate.getFullYear(), 0, 1);
-		const daysToNextMonday =
-				(januaryFirst.getDay() === 1) ? 0 :
-				(7 - januaryFirst.getDay()) % 7;
-		const nextMonday =
-				new Date(currentDate.getFullYear(), 0,
-				januaryFirst.getDate() + daysToNextMonday);
+		let today = this.date
+		let januaryFirst = new Date(today.getFullYear(), 0, 1)
 
-		return (currentDate < nextMonday) ? 52 :
-		(currentDate > nextMonday ? Math.ceil(
-		(currentDate - nextMonday) / (24 * 3600 * 1000) / 7) : 1);
+		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay
+		// Just in case the week start needs to be some other day than Sunday
+		let weekStart = 0
+		let daysBeforeFirstWeekStart = januaryFirst.getDay() - weekStart
+		let firstWeekStart = new Date(januaryFirst.getFullYear(), 0, (daysBeforeFirstWeekStart * -1) + 1)
+
+		let today_unixEpoch = today.getTime()
+		let firstWeekStart_unixEpoch = firstWeekStart.getTime()
+
+		let millisecondsinAWeek = 1000 * 60 * 60 * 24 * 7
+
+		return Math.floor( ((today_unixEpoch - firstWeekStart_unixEpoch) / millisecondsinAWeek) + 1)
 	}
 }

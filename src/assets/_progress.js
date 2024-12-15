@@ -7,7 +7,7 @@ export default class Progress {
 		if (!this.listValue) {
 			this.listValue = listValue
 		}
-		this.date = new BingoDate
+		this.bingodate = new BingoDate
 
 		// Check if a new week
 		if (this.ifNewWeek() === true) {
@@ -19,12 +19,12 @@ export default class Progress {
 		// --- Keep the conditional intact to make sure it doesn't run in production
 		// --- Comment out when not in use
 		// -------------------------------------------------------------------------
-		if (import.meta.env.VITE_MODE === 'development') { this.#reset() }
+		// if (import.meta.env.VITE_MODE === 'development') { this.#reset() }
 	}
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties
 	// Needs to be private so it does not get used outside the Progress class
 	// For outside classs use, use .update() instead
-	// Or .#reset() if all progress needs to be cleared/gameboard needs to change
+	// Or .#reset() if all progress needs to be cleared/board needs to change
 	#set (newListValue) {
 		this.listValue = newListValue || DefaultValues()
 		localStorage.setItem('progress', JSON.stringify(this.listValue))
@@ -34,13 +34,13 @@ export default class Progress {
 		return JSON.parse(localStorage.getItem('progress'))
 	}
 
-	ifNewWeek (){
-		if (parseInt(localStorage.getItem('currentWeek')) === this.date.weekNumber()) {
-			return false
+	ifNewWeek () {
+		if (parseInt(localStorage.getItem('currentWeek')) !== this.bingodate.weekNumber()) {
+			localStorage.setItem('currentWeek', this.bingodate.weekNumber())
+			return true
 		}
 		else {
-			localStorage.setItem('currentWeek', this.date.weekNumber())
-			return true
+			return false
 		}
 	}
 	update(newListValue) {
@@ -53,7 +53,7 @@ export default class Progress {
 		localStorage.removeItem('currentWeek')
 		localStorage.removeItem('progress')
 		// Automatically set the current week number after resetting
-		localStorage.setItem('currentWeek', this.date.weekNumber())
+		localStorage.setItem('currentWeek', this.bingodate.weekNumber())
 		this.#set()
 		return this.listValue
 	}
