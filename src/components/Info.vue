@@ -21,7 +21,7 @@
 			<h3>The Technical Deets</h3>
 
 			<ul>
-				<li><strong>How is progress saved?</strong>—Squares checked, bingo status, and square positions are all stored via the browser's local storage. So progress won't carry over to other devices.</li>
+				<li><strong>How is progress saved?</strong>—Squares checked, bingo status, and square positions are all stored via the browser's local storage. So (for now) progress won't carry over to other devices.</li>
 			</ul>
 		</div>
 	</section>
