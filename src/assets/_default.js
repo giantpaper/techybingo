@@ -4,7 +4,10 @@ import Progress from "./_progress.js"
 
 const squares = await fetch(`./squares.txt`)
 		.then(response => response.text())
-		.then(data => data.split("\n"))
+		.then(data => data.replace(/\n$/, '').split("\n"))
+
+		// .replace() -- removes blank space from EOF
+		// .split() -- turn into array
 
 export default function DefaultValues () {
 	let l = []

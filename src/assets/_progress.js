@@ -19,7 +19,7 @@ export default class Progress {
 		// --- Keep the conditional intact to make sure it doesn't run in production
 		// --- Comment out when not in use
 		// -------------------------------------------------------------------------
-		// if (import.meta.env.VITE_MODE === 'development') { this.#reset() }
+		if (import.meta.env.VITE_MODE === 'development') { this.#reset() }
 	}
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties
 	// Needs to be private so it does not get used outside the Progress class
