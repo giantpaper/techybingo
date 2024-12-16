@@ -23,7 +23,7 @@ App.vue -> ./src/components/Board.vue -> ./WinCond.vue
 
 ## Adding new squares
 
-- Add them to ./public/squares.txt
+Add them to ./public/squares.txt (one per line). Commit and push to main as usual. They'll be available for use the next week.
 
 ### Best Practices
 
