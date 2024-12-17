@@ -40,9 +40,16 @@
 	--ts-color-gold: #F7CA54;
 	--ts-color-green: #7ACA50;
 
+	--ts-color-palegray: #FAFAFA;
+	--ts-color-lightgray: #c2c2c2;
+
 	--color-accent: var(--ts-color-magenta);
 
+	--color-border: var(--vt-c-white);
+
 	--background-win: var(--color-accent);
+
+	--background-box: var(--ts-color-palegray);
 }
 ::selection {
 	background: var(--color-accent);

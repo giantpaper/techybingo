@@ -18,8 +18,8 @@
 </template>
 <style lang="scss" scoped>
 	.board {
-		border-top: 2px var(--color-text) solid;
-		border-left: 2px var(--color-text) solid;
+		border-top: 3px var(--color-border) solid;
+		border-left: 3px var(--color-border) solid;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		margin: 0 auto;
@@ -30,13 +30,18 @@
 		margin-bottom: 0;
 		padding: 0;
 		li {
-			border-right: 2px var(--color-text) solid;
-			border-bottom: 2px var(--color-text) solid;
+			border-right: 3px var(--color-border) solid;
+			border-bottom: 3px var(--color-border) solid;
 			transition: background 0.2s;
 			&.bingo {
-				background: var(--background-win);
 				.checked {
 					color: white;
+				}
+				label {
+					background: var(--background-win) !important;
+					span em {
+						color: var(--vt-c-white);
+					}
 				}
 			}
 		}
@@ -78,8 +83,19 @@
 			appearance: none;
 		}
 	}
+	label {
+		background: var(--background-box);
+	}
 	.free-space {
-		background: rgba(0,0,0,0.125) !important;
+		background: rgba(0,0,0,0.0625) !important;
+	}
+	.bingo {
+		background: var(--background-win);
+		.free-space {
+			span em {
+				color: var(--vt-c-white);
+			}
+		}
 	}
 	.table.disabled label {
 		cursor: default;
