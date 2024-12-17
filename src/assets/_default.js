@@ -27,6 +27,10 @@ export default function DefaultValues () {
 			// Fixes obscenely-long text not breaking
 			square = square.replace(/(^| |>)"/g, `$1“`)
 			square = square.replace(/"($| |<)/g, `”$1`)
+
+			square = square.replace(/(^| |>)'/g, `$1‘`)
+			square = square.replace(/'($| |<)/g, `’$1`)
+
 			square = square.replace(/([^<])\/([^>])/g, "$1/<wbr>$2")
 			square = square.replace(/->/g, "→")
 			// Make sure free space is always checked
