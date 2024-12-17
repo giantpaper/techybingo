@@ -7,7 +7,7 @@
 			</div>
 			<label v-else :class="{ checked: item.checked, }">
 				<input type="checkbox" v-model="item.checked" @click="ifWin(list, i, 'clicked')" v-if="disabled===false" />
-				<span v-html="item.label"></span>
+				<span v-html="displayLabel(item.label)"></span>
 			</label>
 		</li>
 	</ul>
@@ -107,6 +107,28 @@ const bingodate = new BingoDate()
 list.value = bingo.list()
 
 ifWin(list.value)
+
+function displayLabel (item) {
+
+	console.log(item)
+	let label = item.replace(/([^A-z\s0-9\-→<>\?\!\/\s\n"'\(\)&;])/g, `<i>$1</i>`)
+
+	// Fixes obscenely-long text not breaking
+	label = label.replace(/(^| |>)"/g, `$1“`)
+	label = label.replace(/"($| |<)/g, `”$1`)
+
+	label = label.replace(/(^| |>)'/g, `$1‘`)
+	label = label.replace(/'($| |<)/g, `’$1`)
+
+	label = label.replace(/([^<])\/([^>])/g, "$1/<wbr>$2")
+	label = label.replace(/->/g, "→")
+
+	return label
+	/*
+	.length > 0 ? this.listValue.forEach(item => {
+	}) : []
+	*/
+}
 
 const date = new Date()
 
