@@ -109,25 +109,19 @@ list.value = bingo.list()
 ifWin(list.value)
 
 function displayLabel (item) {
+	let label = item.replace(/([^A-z\s0-9\$\#\^\@,\.\*\-→<>\?\!\/\s\n"'\(\)&;])/g, `<i>$1</i>`)
 
-	console.log(item)
-	let label = item.replace(/([^A-z\s0-9\-→<>\?\!\/\s\n"'\(\)&;])/g, `<i>$1</i>`)
+	label = label.replace(/"([^"]+)"/g, `“$1”`)
+	label = label.replace(/'([^']+)'/g, `‘$1’`)
+	label = label.replace(/'s/g, `‘s`)
 
 	// Fixes obscenely-long text not breaking
-	label = label.replace(/(^| |>)"/g, `$1“`)
-	label = label.replace(/"($| |<)/g, `”$1`)
-
-	label = label.replace(/(^| |>)'/g, `$1‘`)
-	label = label.replace(/'($| |<)/g, `’$1`)
-
 	label = label.replace(/([^<])\/([^>])/g, "$1/<wbr>$2")
+
+	// Makes arrows look sexier
 	label = label.replace(/->/g, "→")
 
 	return label
-	/*
-	.length > 0 ? this.listValue.forEach(item => {
-	}) : []
-	*/
 }
 
 const date = new Date()
