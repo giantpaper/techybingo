@@ -25,7 +25,7 @@ export default function DefaultValues () {
 		// Ignore blank lines
 		if (square !== '') {
 			// Fixes obscenely-long text not breaking
-			square = square.replace(/\//g, "/<wbr>")
+			square = square.replace(/([^<])\/([^>])/g, "$1/<wbr>$2")
 			// Make sure free space is always checked
 			let newItem = { id: i++, label: square, checked: square === `Free Space` ? true : false, bingo: false, }
 			l.push(newItem)
