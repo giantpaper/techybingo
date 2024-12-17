@@ -35,7 +35,12 @@
 
   --section-gap: 160px;
 
-	--color-accent: #c7315f;
+	--ts-color-blue: #5A74D3;
+	--ts-color-magenta: #c7315f;
+	--ts-color-gold: #F7CA54;
+	--ts-color-green: #7ACA50;
+
+	--color-accent: var(--ts-color-magenta);
 
 	--background-win: var(--color-accent);
 }

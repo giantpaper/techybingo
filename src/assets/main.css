@@ -1,6 +1,6 @@
 @import './base.css';
 
-@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sorts+Mill+Goudy:ital@0;1&display=swap';
 
 #app {
   margin: 0 auto;
@@ -57,5 +57,35 @@ strong {
 	font-weight: 700;
 	em {
 		font-weight: inherit;
+	}
+}
+
+li {
+	label {
+		cursor: pointer;
+		span {
+			font-weight: inherit;
+			em {
+				font-size: 1.5em;
+				line-height: 115%;
+				letter-spacing: -0.0625rem;
+				font-style: italic;
+				font-family: 'Sorts Mill Goudy',serif;
+			}
+		}
+	}
+	em {
+		color: var(--ts-color-blue);
+	}
+	&:nth-child(3n + 1) {
+		label span em {
+			filter: brightness(90%);
+			color: var(--ts-color-green);
+		}
+	}
+	&:nth-child(3n + 2) {
+		label span em {
+			color: var(--ts-color-magenta);
+		}
 	}
 }

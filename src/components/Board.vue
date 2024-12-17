@@ -51,6 +51,7 @@
 		text-align: center;
 		padding: 1rem;
 		position: relative;
+		font-weight: 800;
 		&::before,
 		&::after {
 			width: 0;
@@ -76,9 +77,6 @@
 		input[type="checkbox"] {
 			appearance: none;
 		}
-	}
-	label {
-		cursor: pointer;
 	}
 	.free-space {
 		background: rgba(0,0,0,0.125) !important;

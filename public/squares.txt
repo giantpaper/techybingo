@@ -1,44 +1,44 @@
-Asked a client "Did you clear your cache?"
-Call interrupted by pet or family member
-Client backtracks on a new thing they asked for after people complained
-Client exerts "I want to talk to your manager" energy
-Client is a no-show for a call
-Client is extremely vague about a request
-Client said "can we get on a call?"
-Client's site is ancient with outdated software/dependencies/plugins
-Created a workday playlist
-Did household chores on your lunchbreak
-Forgot to attach a file to an email
-Forgot to update your Slack status from 'away' to 'active' after lunch
-Get asked to help with household chores during work
-Got takeout/went out to eat for lunch
-Got up to refill your waterbottle
-Had a mini-Friday celebration
-Helpscout/Github/Shopify/Cloudflare/Gmail is down
-Internet is having issues so you book it to a coffee shop
-Joked about how long your "commute" is
-Said "lol" and meant it
-Said or heard "Can everyone see my screen?"
-Said or heard "Can you email that to me?" on a call
-Said or heard "Does this need a quote?"
-Said or heard "Good morning" to everyone
-Said or heard "Hey guys, I have to jump on another call"
-Said or heard "I think there's lag"
-Said or heard "Sorry, I was on mute"
-Sent a gif to coworker(s)
-Sent a meme to coworker(s)
-*sound of someone typing on a call...possibly with a hammer*
-Sudden power outage
-Took a coffee break (or 2...or...3)
-Used an emoji in an email
-Used the pomodoro technique
+Asked a client "Did you <em>clear your cache</em>?" 🚮
+Call <em>interrupted</em> by pet or family member
+Client <em>backtracks</em> on a new thing they asked for after people complained
+Client exerts "I want to talk to <em>your manager</em>" energy 😤
+Client is a <em>no-show</em> for a call 🚫
+Client is <em>extremely vague</em> about a request 🤔
+Client said “can we get on a call?” 🤙
+Client's site has a lot of <em>outdated</em> software/dependencies/plugins 💾
+Created a <em>workday playlist</em> 🎧
+<em>Did household chores</em> on your lunchbreak 🧹
+Forgot to <em>attach a file</em> to an email 🖇️
+Forgot to <em>update</em> your Slack status from 'away' to 'active' after lunch 🫢
+Got <em>asked to help</em> with household chores during work 🧺
+Got takeout/went out to eat for lunch 🥡
+Got up to refill your waterbottle 🚰
+Had a <em>mini-Friday</em> celebration 🎉
+Helpscout/Github/Shopify/Cloudflare/Gmail is down 👾
+Internet is down for a while so you book it to a <em>coffee shop</em> ☕️🏃
+Joked about <em>how long</em> your "commute" is 🤭
+Said "lol" and meant it 😆
+Said or heard "Can everyone <em>see my screen</em>?"
+Said or heard "Can you <em>email that to me</em>?" on a call
+Said or heard "Does this need a <em>quote</em>?"
+Said or heard <em>“Good morning”</em> ☀️ to everyone
+Said or heard "Hey guys, I have to jump on another call" 📞&nbsp;->&nbsp;📞
+Said or heard "I think there's lag" 🐌
+Said or heard "Sorry, I was on mute" 🤐
+Sent a <em>gif</em> to coworker(s)
+Sent a <em>meme</em> to coworker(s)
+*sound of someone typing on a call...possibly <em>with a hammer</em>* 🔨
+Sudden power outage<br>😐&nbsp;->&nbsp;🫥
+Took a <em>coffee break</em> (or 2...or...3)<br/>☕️☕️☕️
+Used <em>an emoji</em> in an email 😛
+Used the <em>pomodoro</em> technique 🍅
 Worked in your backyard
-You really did work in your pajamas
-You/Someone else followed up for an update on a task
-You/Someone else forgets what day it is.
-You/Someone else needed to restart after computer glitches/crashes
-You/Someone else shares some epic software gore
-You/Someone else shows off pics of your pets/kids on Slack
-You/Someone else spot a client's products in the wild
-You/Someone else talks about the local weather
-You/Someone else uses a custom background on a call
+You really did work <em>in your pajamas</em>
+You/Someone else followed up for <em>an update on a task</em> 🙋
+You/Someone else forgot <em>what day it is</em>
+You/Someone else needed to <em>restart</em> after computer glitches/crashes 💥
+You/Someone else shared some <em>epic software gore</em>
+You/Someone else showed off pics of <em>pets/kids</em> on Slack 👶🐶
+You/Someone else spotted a client's <em>products in the wild</em> 👉
+You/Someone else talked about <em>the local weather</em> 🌤️
+You/Someone else used <em>a custom background</em> on a call 🌉
