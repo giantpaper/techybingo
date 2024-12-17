@@ -28,6 +28,7 @@ export default function DefaultValues () {
 			square = square.replace(/(^| |>)"/g, `$1“`)
 			square = square.replace(/"($| |<)/g, `”$1`)
 			square = square.replace(/([^<])\/([^>])/g, "$1/<wbr>$2")
+			square = square.replace(/->/g, "→")
 			// Make sure free space is always checked
 			let newItem = { id: i++, label: square, checked: square === `Free Space` ? true : false, bingo: false, }
 			l.push(newItem)
