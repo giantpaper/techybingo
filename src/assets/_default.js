@@ -25,7 +25,12 @@ export default function DefaultValues () {
 		// Ignore blank lines
 		if (square !== '') {
 			// Make sure free space is always checked
-			let newItem = { id: i++, label: square, checked: square === `Free Space` ? true : false, bingo: false, }
+			let newItem = {
+				id: i++,
+				label: square,
+				checked: square === `Free Space` ? true : false,
+				bingo: false,
+			}
 			l.push(newItem)
 		}
 	})
