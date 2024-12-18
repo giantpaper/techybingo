@@ -71,14 +71,14 @@
 			mix-blend-mode: multiply;
 		}
 		&::before {
-			top: 40%;
+			top: 41%;
 			left: 1%;
 			mask: url('@/assets/brush_stroke.svg') no-repeat center / 100% 100%;
 			transform: scaleX(-100%);
 		}
 		&::after {
 			mask: url('@/assets/brush_stroke_02.svg') no-repeat center / 100% 100%;
-			bottom: 40%;
+			bottom: 41%;
 			right: 1%;
 			transition-delay: 0.15s;
 			transform: rotate(180deg);
