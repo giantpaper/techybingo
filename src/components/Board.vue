@@ -60,23 +60,35 @@
 		&::before,
 		&::after {
 			width: 0;
-			height: 0;
-			background: var(--color-text);
+			background: var(--ts-color-magenta);
 			content: '';
 			display: block;
 			position: absolute;
-			transform: rotate(45deg);
 			z-index: 5;
 			transition: width 0.15s, 0.1s height 0.15s;
+			will-change: width;
+			opacity: 0;
+			mix-blend-mode: multiply;
+		}
+		&::before {
+			top: 40%;
+			left: 1%;
+			mask: url('@/assets/brush_stroke.svg') no-repeat center / 100% 100%;
+			transform: scaleX(-100%);
 		}
 		&::after {
-			transform: rotate(-45deg);
+			mask: url('@/assets/brush_stroke_02.svg') no-repeat center / 100% 100%;
+			bottom: 40%;
+			right: 1%;
+			transition-delay: 0.15s;
+			transform: rotate(180deg);
 		}
 		&.checked {
 			&::before,
 			&::after {
-				width: 1px;
-				height: 110%;
+				width: 98%;
+				height: 10%;
+				opacity: 0.5;
 			}
 		}
 		input[type="checkbox"] {

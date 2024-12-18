@@ -60,7 +60,7 @@ strong {
 	}
 }
 
-li {
+.board li {
 	label {
 		cursor: pointer;
 		span {
@@ -92,9 +92,7 @@ li {
 		}
 	}
 	&.bingo {
-		&:nth-child(3n + 0),
-		&:nth-child(3n + 1),
-		&:nth-child(3n + 2) {
+		& {
 			label span em {
 				color: var(--vt-c-white);
 			}
