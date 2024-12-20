@@ -65,7 +65,7 @@
 			display: block;
 			position: absolute;
 			z-index: 5;
-			transition: width 0.15s, 0.1s height 0.15s;
+			transition: width 0.2s, 0.15s height 0.2s;
 			will-change: width;
 			opacity: 0;
 			mix-blend-mode: multiply;
@@ -80,7 +80,7 @@
 			mask: url('@/assets/brush_stroke_02.svg') no-repeat center / 100% 100%;
 			bottom: 41%;
 			right: 1%;
-			transition-delay: 0.15s;
+			transition-delay: 0.2s;
 			transform: rotate(180deg);
 		}
 		&.checked {
