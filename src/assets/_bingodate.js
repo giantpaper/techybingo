@@ -36,6 +36,9 @@ export default class BingoDate {
 		let saturday = this.saturday()
 		return `${sunday} - ${saturday}`
 	}
+	nextSunday() {
+		return this.sunday() + 7
+	}
 	weekNumber() {
 		// Based off of
 		// https://www.geeksforgeeks.org/calculate-current-week-number-in-javascript/

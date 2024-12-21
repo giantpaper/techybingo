@@ -7,6 +7,7 @@ App.vue -> ./src/components/Board.vue -> ./WinCond.vue
 ./public
 	squares.txt - The labels for each square. One label per line
 ./src
+	generateBoard.php - creates a new randomized list for the next week, so everyone has the same squares
 	./assets
 		bingo.js - Where the bingo'ing happens (generate the board, check for wins, etc)
 		bingodate.js - Where all date-related code lives

@@ -2,7 +2,20 @@ import { checkWeek, shuffle } from "./_functions.js"
 import { ref } from 'vue'
 import Progress from "./_progress.js"
 
-const squares = await fetch(`./squares.txt`)
+import BingoDate from './_bingodate.js'
+
+let bingodate = new BingoDate()
+
+const boards = {
+	currentYear: bingodate.date.getFullYear().toString(),
+	currentMonth: (bingodate.date.getMonth() + 1).toString(),
+	currentSunday: (bingodate.sunday()).toString(),
+	thisWeeks() {
+		return `/ready/${this.currentYear+this.currentMonth+this.currentSunday}.txt`
+	},
+}
+
+const squares = await fetch(boards.thisWeeks())
 		.then(response => response.text())
 		.then(data => data.replace(/\n$/, '').split("\n"))
 
