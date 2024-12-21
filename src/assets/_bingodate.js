@@ -25,9 +25,15 @@ export default class BingoDate {
 	day() {
 		return this.date.getDate()
 	}
+	sunday() {
+		return this.date.getDate() - this.date.getDay()
+	}
+	saturday() {
+		return this.sunday() + 6
+	}
 	week() {
-		let sunday = this.date.getDate() - this.date.getDay()
-		let saturday = sunday + 6
+		let sunday = this.sunday()
+		let saturday = this.saturday()
 		return `${sunday} - ${saturday}`
 	}
 	weekNumber() {
