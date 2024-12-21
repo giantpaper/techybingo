@@ -108,6 +108,12 @@
 				color: var(--vt-c-white);
 			}
 		}
+		label {
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
 	}
 	.table.disabled label {
 		cursor: default;
