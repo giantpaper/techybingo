@@ -11,7 +11,7 @@ const boards = {
 	currentMonth: (bingodate.date.getMonth() + 1).toString(),
 	currentSunday: (bingodate.sunday()).toString(),
 	thisWeeks() {
-		return `/ready/${this.currentYear+this.currentMonth+this.currentSunday}.txt`
+		return `https://api.giantpaper.io/ready/${this.currentYear+this.currentMonth+this.currentSunday}.txt`
 	},
 }
 
