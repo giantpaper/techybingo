@@ -1,13 +1,22 @@
 # Techybingo / Bingoscouts
 
+## Tech:
+(For dev purposes)
+- Node
+- Yarn
+- Vue
+- Vite
+- PHP
+
 ## File hierarchy
 App.vue -> ./src/components/Board.vue -> ./WinCond.vue
 
 ```
 ./public
 	squares.txt - The labels for each square. One label per line
+	./ready - the randomized lists for each week (e.g. what actually gets used for the board). Needs to gitignore'd other bad things might happen. Lists
 ./src
-	generateBoard.php - creates a new randomized list for the next week, so everyone has the same squares
+	generateBoard.php - creates a new randomized list for the next week, so everyone has the same squares (Using PHP, because my PHP-fu is better than my Vue/JS/node-fu)
 	./assets
 		bingo.js - Where the bingo'ing happens (generate the board, check for wins, etc)
 		bingodate.js - Where all date-related code lives
