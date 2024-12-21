@@ -10,15 +10,13 @@ App.vue -> ./src/components/Board.vue -> ./WinCond.vue
 	./assets
 		bingo.js - Where the bingo'ing happens (generate the board, check for wins, etc)
 		bingodate.js - Where all date-related code lives
-		canvas.js - Legacy code, generates the "win condition" images under the board
 		default.js - Has all the squares and their default settings, and also preps them for the board (adds the free space, randomizes them, grabs the first 25 items)
 		functions.js - Misc functions
 		progress.js - Updates the browser's localStorage with the user's progress (ex. checked squares, bingo status)
 	./components
 		Board.vue - The gameboard itself
-		Canvas.vue - Used to generate the "win condition" images
 		Info.vue - The "info" slideout drawer
-		WinCond.vue - Brings up the "win condition" images, uses static images instead of a dynamically generated canvas (cuz of some weird bugs where if the computer went to sleep, the images would grow about 100x their size and become blank)
+		WinCond.vue - Brings up the "win condition" images
 ```
 
 ## Adding new squares
