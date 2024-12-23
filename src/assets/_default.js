@@ -6,12 +6,14 @@ import BingoDate from './_bingodate.js'
 
 let bingodate = new BingoDate()
 
+const version = `v2`
+
 const boards = {
 	currentYear: bingodate.date.getFullYear().toString(),
 	currentMonth: (bingodate.date.getMonth() + 1).toString(),
 	currentSunday: (bingodate.sunday()).toString(),
 	thisWeeks() {
-		return `https://api.giantpaper.io/techybingo/ready/${this.currentYear+this.currentMonth+this.currentSunday}.txt`
+		return `https://api.giantpaper.io/techybingo/ready/${this.currentYear+this.currentMonth+this.currentSunday}.txt?v=${version}`
 	},
 }
 
