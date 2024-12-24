@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-		"build:board": "php ./src/generateBoard.php"
+		"build:board": "node ./public/scripts/generateBoard.js"
   },
   "dependencies": {
     "mathjs": "^14.0.0",
