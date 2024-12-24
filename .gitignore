@@ -17,6 +17,8 @@ coverage
 
 error_log
 
+/public/ready/
+
 /cypress/videos/
 /cypress/screenshots/
 
