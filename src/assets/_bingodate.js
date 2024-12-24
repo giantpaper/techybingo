@@ -36,8 +36,14 @@ export default class BingoDate {
 		let saturday = this.saturday()
 		return `${sunday} - ${saturday}`
 	}
+	thisSunday() {
+		return new Date(this.date.getFullYear(), this.date.getMonth(), this.sunday() )
+	}
+	prevSunday() {
+		return new Date(this.date.getFullYear(), this.date.getMonth(), this.sunday() - 7)
+	}
 	nextSunday() {
-		return this.sunday() + 7
+		return new Date(this.date.getFullYear(), this.date.getMonth(), this.sunday() + 7)
 	}
 	weekNumber() {
 		// Based off of

@@ -1,13 +1,8 @@
 import { range } from 'mathjs'
 import { ref } from 'vue'
+import { arraySum } from './_functions.js'
 
 import Progress from "./_progress.js"
-
-const arraySum = (arr) => {
-	return arr.reduce((total, current) => {
-		return total + current;
-	}, 0);
-}
 
 export default class Bingo {
 	constructor(cardsValue) {

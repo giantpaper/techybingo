@@ -15,6 +15,12 @@ export function shuffle(array) {
 	return array
 }
 
+export function arraySum (arr) {
+	return arr.reduce((total, current) => {
+		return total + current;
+	}, 0);
+}
+
 export function checkWeek() {
 	return localStorage.getItem('currentWeek')
 }

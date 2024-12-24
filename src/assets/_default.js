@@ -8,16 +8,26 @@ let bingodate = new BingoDate()
 
 const version = `v2`
 
+let prevObj = bingodate.prevSunday()
+let thisObj = bingodate.thisSunday()
+let nextObj = bingodate.nextSunday()
+
 const boards = {
-	currentYear: bingodate.date.getFullYear().toString(),
+	prevWeeks: [prevObj.getFullYear(), prevObj.getMonth() + 1, prevObj.getDate()],
+	thisWeeks: [thisObj.getFullYear(), thisObj.getMonth() + 1, thisObj.getDate()],
+	nextWeeks: [nextObj.getFullYear(), nextObj.getMonth() + 1, nextObj.getDate()],
 	currentMonth: (bingodate.date.getMonth() + 1).toString(),
 	currentSunday: (bingodate.sunday()).toString(),
-	thisWeeks() {
-		return `https://api.giantpaper.io/techybingo/ready/${this.currentYear+this.currentMonth+this.currentSunday}.txt?v=${version}`
-	},
 }
 
-const squares = await fetch(boards.thisWeeks())
+function formatFileName(array) {
+	array = array.map(v => {
+		return v.toString()
+	})
+	return array.join('')
+}
+
+const squares = await fetch(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
 		.then(response => response.text())
 		.then(data => data.replace(/\n$/, '').split("\n"))
 
