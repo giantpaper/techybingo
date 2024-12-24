@@ -13,11 +13,8 @@ dist
 dist-ssr
 coverage
 *.local
-/public/ready/
 
 error_log
-
-/public/ready/
 
 /cypress/videos/
 /cypress/screenshots/
