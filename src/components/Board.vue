@@ -145,6 +145,8 @@ ifWin(list.value)
 function displayLabel (item, i) {
 	let label = item.replace(/([^A-z\s0-9\$\#\^\@,\.\*\-→<>\?\!\/\s\n"'\(\)&;])/g, `<i>$1</i>`)
 
+	label = label.replace(/\*([^\*]+)\*/, '<em>$1</em>')
+
 	label = label.replace(/"([^"]+)"/g, `“$1”`)
 	label = label.replace(/'([^']+)'/g, `‘$1’`)
 	label = label.replace(/'s/g, `‘s`)
