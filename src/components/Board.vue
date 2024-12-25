@@ -1,13 +1,13 @@
 <template>
 	<h1>Week of <span>{{ bingodate.month() + " "+ bingodate.week() }}</span></h1>
 	<ul class="board">
-		<li v-for="(item, i) in list" :class="bingo.classes(i)" :ref="li => (liList[i] = li)">
+		<li v-for="(item, i) in list" :ref="li => (liList[i] = li)">
 			<div class="free-space checked" v-if="item.label===`Free Space`">
 				FREE SPACE
 			</div>
 			<label v-else :class="{ checked: item.checked, }">
 				<input type="checkbox" v-model="item.checked" @click="ifWin(list, i, 'clicked')" v-if="disabled===false" />
-				<span v-html="displayLabel(item.label)"></span>
+				<span v-html="displayLabel(item.label, i)"></span>
 			</label>
 		</li>
 	</ul>
@@ -142,7 +142,7 @@ list.value = bingo.list()
 
 ifWin(list.value)
 
-function displayLabel (item) {
+function displayLabel (item, i) {
 	let label = item.replace(/([^A-z\s0-9\$\#\^\@,\.\*\-→<>\?\!\/\s\n"'\(\)&;])/g, `<i>$1</i>`)
 
 	label = label.replace(/"([^"]+)"/g, `“$1”`)
@@ -154,6 +154,11 @@ function displayLabel (item) {
 
 	// Makes arrows look sexier
 	label = label.replace(/->/g, "→")
+
+	// For debugging/dev purposes
+	if (import.meta.env.MODE === 'development') {
+		label = i + ': ' + label
+	}
 
 	return label
 }

@@ -15,7 +15,15 @@
 			<figcaption>Any diagonal</figcaption>
 		</figure>
 		<figure>
-			<img src="@/assets/win_blackout.svg" width="75" height="75" alt="" class="win_diag" />
+			<img src="@/assets/win_outeredge.svg" width="75" height="75" alt="" class="win_outeredge" />
+			<figcaption>Outer Edge</figcaption>
+		</figure>
+		<figure>
+			<img src="@/assets/win_fourcorners.svg" width="75" height="75" alt="" class="win_fourcorners" />
+			<figcaption>Four Corners</figcaption>
+		</figure>
+		<figure>
+			<img src="@/assets/win_blackout.svg" width="75" height="75" alt="" class="win_blackout" />
 			<figcaption>Blackout</figcaption>
 		</figure>
 	</section>
@@ -25,10 +33,10 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
-		width: 60ch;
+		width: 50ch;
 		justify-content: space-between;
 		figure {
-			width: calc( (100% / 4) - 2rem );
+			width: calc( (100% / 3) - 2rem );
 		}
 		img {
 			margin: 0 auto;
