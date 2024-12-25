@@ -27,7 +27,7 @@ export default class Bingo {
 				range(4, 25, 5),
 			],
 			diag: [
-				range(0, 25, 6),
+				range(0, 25, 6), // range(startIndex, lengthOfArray, step)
 				range(4, 21, 4),
 			],
 			fourCorners: [
