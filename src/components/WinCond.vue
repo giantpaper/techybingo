@@ -15,12 +15,12 @@
 			<figcaption>Any diagonal</figcaption>
 		</figure>
 		<figure>
-			<img src="@/assets/win_outeredge.svg" width="75" height="75" alt="" class="win_outeredge" />
-			<figcaption>Outer Edge</figcaption>
-		</figure>
-		<figure>
 			<img src="@/assets/win_fourcorners.svg" width="75" height="75" alt="" class="win_fourcorners" />
 			<figcaption>Four Corners</figcaption>
+		</figure>
+		<figure>
+			<img src="@/assets/win_outeredge.svg" width="75" height="75" alt="" class="win_outeredge" />
+			<figcaption>Outer Edge</figcaption>
 		</figure>
 		<figure>
 			<img src="@/assets/win_blackout.svg" width="75" height="75" alt="" class="win_blackout" />
