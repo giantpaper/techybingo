@@ -6,7 +6,7 @@
 				FREE SPACE
 			</div>
 			<label v-else :class="{ checked: item.checked, }">
-				<input type="checkbox" v-model="item.checked" @click="ifWin(list, i, 'clicked')" v-if="disabled===false" />
+				<input type="checkbox" v-model="item.checked" @click="ifWin(list, i, 'clicked')" v-if="item.disabled===false" />
 				<span v-html="displayLabel(item.label, i)"></span>
 			</label>
 		</li>
@@ -183,6 +183,12 @@ function ifWin(list, i, event) {
 	setTimeout(() => {
 		let win = bingo.ifWin(list, i, event)
 		list.value = bingo.list()
+
+		document.querySelectorAll('.board > li').forEach((el, i) => {
+			if (el.classList.contains('bingo')) {
+				list.value[i].disabled = true
+			}
+		})
 	})
 }
 

@@ -55,6 +55,7 @@ export default function DefaultValues () {
 				label: square,
 				checked: square === `Free Space` ? true : false,
 				bingo: false,
+				disabled: false,
 			}
 			l.push(newItem)
 		}
