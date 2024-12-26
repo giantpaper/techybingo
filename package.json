@@ -8,9 +8,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-		"build:board": "node ./public/scripts/generateBoard.js"
+    "build:board": "node ./public/scripts/generateBoard.js"
   },
   "dependencies": {
+    "emoji-regex": "^10.4.0",
     "mathjs": "^14.0.0",
     "vue": "^3.5.12"
   },

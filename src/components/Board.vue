@@ -131,6 +131,8 @@ import Info from './Info.vue'
 import WinCond from './WinCond.vue'
 import Footer from './Footer.vue'
 
+import emojiRegex from 'emoji-regex'
+
 const list = ref([]) // progress
 const liList = ref([])
 const disabled = ref(false)
@@ -143,7 +145,13 @@ list.value = bingo.list()
 ifWin(list.value)
 
 function displayLabel (item, i) {
-	let label = item.replace(/([^A-z\s0-9\$\#\^\@,\.\*\-→<>\?\!\/\s\n"'\(\)&;])/g, `<i>$1</i>`)
+	// https://www.freecodecamp.org/news/how-to-use-regex-to-match-emoji-including-discord-emotes/
+	let label = item
+	for (const match of label.matchAll(emojiRegex())) {
+		let regex = new RegExp(`(${match[0]})`, 'g')
+		console.log(regex)
+		label = label.replace(regex, "<i>$1</i>")
+	}
 
 	label = label.replace(/\*([^\*]+)\*/, '<em>$1</em>')
 
