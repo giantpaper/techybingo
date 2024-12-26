@@ -149,7 +149,6 @@ function displayLabel (item, i) {
 	let label = item
 	for (const match of label.matchAll(emojiRegex())) {
 		let regex = new RegExp(`(${match[0]})`, 'g')
-		console.log(regex)
 		label = label.replace(regex, "<i>$1</i>")
 	}
 
