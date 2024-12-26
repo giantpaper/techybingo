@@ -143,7 +143,8 @@ list.value = bingo.list()
 ifWin(list.value)
 
 function displayLabel (item, i) {
-	let label = item.replace(/([^A-z\s0-9\$\#\^\@,\.\*\-→<>\?\!\/\s\n"'\(\)&;])/g, `<i>$1</i>`)
+	// https://www.freecodecamp.org/news/how-to-use-regex-to-match-emoji-including-discord-emotes/
+	let label = item.replace(/<a?:.+?:\d{18}>|(\p{Extended_Pictographic})/gu, `<i>$1</i>`)
 
 	label = label.replace(/\*([^\*]+)\*/, '<em>$1</em>')
 
