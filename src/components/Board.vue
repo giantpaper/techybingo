@@ -39,6 +39,7 @@
 				}
 				label {
 					background: var(--background-win) !important;
+					cursor: revert;
 					span em {
 						color: var(--vt-c-white);
 					}
@@ -108,15 +109,13 @@
 				color: var(--vt-c-white);
 			}
 		}
+		div,
 		label {
 			&::before,
 			&::after {
 				display: none;
 			}
 		}
-	}
-	.table.disabled label {
-		cursor: default;
 	}
 </style>
 <script setup>
