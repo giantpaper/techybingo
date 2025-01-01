@@ -1,5 +1,5 @@
 <template>
-	<h1>Week of <span>{{ bingodate.month() + " "+ bingodate.week() }}</span></h1>
+	<h1>Week of <span>{{ bingodate.week() }}</span></h1>
 	<ul class="board">
 		<li v-for="(item, i) in list" :ref="li => (liList[i] = li)">
 			<div class="free-space checked" v-if="item.label===`Free Space`">

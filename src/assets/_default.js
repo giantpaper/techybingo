@@ -16,7 +16,7 @@ const boards = {
 	prevWeeks: [prevObj.getFullYear(), prevObj.getMonth() + 1, prevObj.getDate()],
 	thisWeeks: [thisObj.getFullYear(), thisObj.getMonth() + 1, thisObj.getDate()],
 	nextWeeks: [nextObj.getFullYear(), nextObj.getMonth() + 1, nextObj.getDate()],
-	currentMonth: (bingodate.date.getMonth() + 1).toString(),
+	currentMonth: (bingodate.currentDate.getMonth() + 1).toString(),
 	currentSunday: (bingodate.sunday()).toString(),
 }
 
