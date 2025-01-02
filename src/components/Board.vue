@@ -11,6 +11,7 @@
 			</label>
 		</li>
 	</ul>
+	<p><strong>{{ COUNTDOWN }}</strong> till the next bingo</p>
 	<WinCond />
 	<Info />
 
@@ -126,6 +127,8 @@ import Bingo from "../assets/_bingo.js"
 import BingoDate from "../assets/_bingodate.js"
 import { range } from 'mathjs'
 
+import Countdown from '../assets/_countdown.js'
+
 import Info from './Info.vue'
 import WinCond from './WinCond.vue'
 import Footer from './Footer.vue'
@@ -190,6 +193,14 @@ function ifWin(list, i, event) {
 		})
 	})
 }
+
+const COUNTDOWN = ref(null)
+
+let timer = new Countdown()
+
+setInterval(() => {
+	COUNTDOWN.value = timer.get()
+})
 
 
 </script>
