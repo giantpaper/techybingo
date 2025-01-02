@@ -1,44 +1,44 @@
-Asked a client "Did you *clear your cache?*" 🚮
-Call *interrupted* by pet or family member
-Client *backtracks* on a new thing they asked for after people complained
+Asked a client "Did you ^clear your cache?^" 🚮
+Call ^interrupted^ by pet or family member
+Client ^backtracks^ on a new thing they asked for after people complained
 Client demands an update early in the morning when you're still asleep
-Client exerts "I want to talk to *your manager*" energy 😤
-Client is a *no-show* for a call
-Client is *extremely vague* about a request 🤔
+Client exerts "I want to talk to ^your manager^" energy 😤
+Client is a ^no-show^ for a call
+Client is ^extremely vague^ about a request 🤔
 Client said "can we get on a call?" 🤙
-Client's site has a lot of *outdated* software/dependencies/plugins
-Created a *workday playlist* 🎧
-*Did household chores* on your lunchbreak 🧹
-Forgot to *attach a file* to an email 🖇️
-Forgot to *update* your Slack status from 'away' to 'active' after lunch 🫢
-Got *asked to help* with household chores during work 🧺
+Client's site has a lot of ^outdated^ software/dependencies/plugins
+Created a ^workday playlist^ 🎧
+^Did household chores^ on your lunchbreak 🧹
+Forgot to ^attach a file^ to an email 🖇️
+Forgot to ^update^ your Slack status from 'away' to 'active' after lunch 🫢
+Got ^asked to help^ with household chores during work 🧺
 Got takeout/went out to eat for lunch 🥡
 Got up to refill your waterbottle 🚰
-Had a *mini-Friday* celebration 🎉
+Had a ^mini-Friday^ celebration 🎉
 Helpscout/Github/Shopify/Cloudflare/Gmail is down 👾
-Internet has been down for a while so you book it to a *coffee shop* ☕️🏃
-Said *"lol"* and meant it
-Said or heard "Can everyone *see my screen?*"
-Said or heard "Can you *email that to me?*" on a call
-Said or heard "Does this need a *quote?*"
-Said or heard *“Good morning”* ☀️ to everyone
+Internet has been down for a while so you book it to a ^coffee shop^ ☕️🏃
+Said ^"lol"^ and meant it
+Said or heard "Can everyone ^see my screen?^"
+Said or heard "Can you ^email that to me?^" on a call
+Said or heard "Does this need a ^quote?^"
+Said or heard ^“Good morning”^ ☀️ to everyone
 Said or heard "Hey guys, I have to jump on another call" 📞&nbsp;->&nbsp;📞
 Said or heard "I think there's lag" 🐌
 Said or heard "Sorry, I was on mute" 🤐
-Sent a *gif/meme* to coworker(s)
-*sound of someone typing on a call...possibly *with a hammer** 🔨
+Sent a ^gif/meme^ to coworker(s)
+*sound of someone typing on a call...possibly ^with a hammer^* 🔨
 Sudden power outage<br>😐&nbsp;->&nbsp;🫥
-Took a *coffee break* (or 2...or...3)<br/>☕️☕️☕️
-Used *an emoji* in an email 😛
-Used the *pomodoro* technique 🍅
+Took a ^coffee break^ (or 2...or...3)<br/>☕️☕️☕️
+Used ^an emoji^ in an email 😛
+Used the ^pomodoro^ technique 🍅
 Worked in your backyard
-You really did work *in your pajamas*
-You/someone else followed up for *an update on a task* 🙋
-You/someone else forgot *what day it is*
-You/someone else joked about *how long* your "commute" is 🤭
-You/someone else needed to *restart* after computer glitches/crashes 💥
-You/someone else shared some *epic software gore*
-You/someone else showed off pics of *pets/kids* on Slack 👶🐶
-You/someone else spotted a client's *products/ads/building* in the wild 📸
-You/someone else talked about *the local weather* 🌤️
-You/someone else used *a custom background* on a call 🌉
+You really did work ^in your pajamas^
+You/someone else followed up for ^an update on a task^ 🙋
+You/someone else forgot ^what day it is^
+You/someone else joked about ^how long^ your "commute" is 🤭
+You/someone else needed to ^restart^ after computer glitches/crashes 💥
+You/someone else shared some ^epic software gore^
+You/someone else showed off pics of ^pets/kids^ on Slack 👶🐶
+You/someone else spotted a client's ^products/ads/building^ in the wild 📸
+You/someone else talked about ^the local weather^ 🌤️
+You/someone else used ^a custom background^ on a call 🌉

@@ -154,7 +154,7 @@ function displayLabel (item, i) {
 		label = label.replace(regex, "<i>$1</i>")
 	}
 
-	label = label.replace(/\*([^\*]+)\*/, '<em>$1</em>')
+	label = label.replace(/\^([^\^]+)\^/, '<em>$1</em>')
 
 	label = label.replace(/"([^"]+)"/g, `“$1”`)
 	label = label.replace(/'([^']+)'/g, `‘$1’`)
