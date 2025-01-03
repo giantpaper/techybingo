@@ -6,7 +6,7 @@
 
 			<ol>
 				<li>Check off squares that apply throughout your week. Ex. If either Gmail, Helpscout, Github, etc go down, check off <em>Helpscout/<wbr>Github/<wbr>Shopify/<wbr>Cloudflare/<wbr>Gmail is down</em></li>
-				<li>Once you've filled up any row, and column, any diagonal (see Win Conditions) with checked items, you've got BINGO.</li>
+				<li>Once you've filled up any row, and column, any diagonal, etc (see Win Conditions) with checked items, you've got BINGO.</li>
 			</ol>
 
 			<h2>FAQs</h2>
