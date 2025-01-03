@@ -33,8 +33,10 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
-		width: 50ch;
+		width: 60ch;
+		padding: var(--ts-spacing-x) var(--ts-spacing-y);
 		justify-content: space-between;
+		background: var(--ts-color-lightgray-02);
 		figure {
 			width: calc( (100% / 3) - 2rem );
 		}

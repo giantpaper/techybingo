@@ -6,20 +6,20 @@ export default class Countdown {
 		this.today = Date.now()
 		this.nextSunday = this.bingodate.nextSunday().getTime()
 		this.timeRemaining = this.nextSunday - this.today
-		
+
 		this.timers = {
 			d: Math.floor(this.timeRemaining / (1000 * 60 * 60 * 24)),
 			h: Math.floor((this.timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
 			m: Math.floor((this.timeRemaining % (1000 * 60 * 60)) / (1000 * 60)),
 			s: Math.floor((this.timeRemaining % (1000 * 60)) / 1000),
 		}
-		
+
 		return [
 			this.numberCase('d'),
 			this.numberCase('h'),
 			this.numberCase('m'),
 			this.numberCase('s'),
-		].join(' ')
+		].join(' / ')
 	}
 	numberCase(keyword) {
 		let inflections = {
@@ -45,9 +45,9 @@ export default class Countdown {
 		if (value === 1) {
 			inflection = inflections[keyword][0]
 		}
-		else if (value === 0) {
-			inflection = ''
-			value = ''
+		else if (value === 0 && keyword === 'd') {
+			// Hide the `day` counter if it reaches 0
+			return undefined
 		}
 		else {
 			inflection = inflections[keyword][1]
@@ -61,7 +61,7 @@ export default class Countdown {
 // 	today: Date.now(),
 // 	nextSunday: bingodate.nextSunday().getTime(),
 // 	timeRemaining: this.nextSunday - this.today,
-// 
+//
 // 	countdowns: {
 // 		days: Math.floor(this.timeRemaining / (1000 * 60 * 60 * 24)),
 // 		hours: Math.floor((this.timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
@@ -89,6 +89,6 @@ export default class Countdown {
 // 	// numberCase (keyword) {
 // 	// 	let count =
 // 	// }
-// 
+//
 // 	// console.log(days, `${Math.floor(days)} days ${Math.floor(hours)} hours ${minutes} minutes`)
 // }

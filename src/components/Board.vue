@@ -11,7 +11,7 @@
 			</label>
 		</li>
 	</ul>
-	<p><strong>{{ COUNTDOWN }}</strong> till the next bingo</p>
+	<p class="countdown"><strong>{{ COUNTDOWN }}</strong><br /><span>Till new bingo cards</span></p>
 	<WinCond />
 	<Info />
 
@@ -102,6 +102,17 @@
 	}
 	.free-space {
 		background: rgba(0,0,0,0.0625) !important;
+	}
+	.countdown {
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 2rem;
+		strong {
+			font-size: 1rem;
+			font-weight: 900;
+		}
+		span {
+		}
 	}
 	.bingo {
 		background: var(--background-win);

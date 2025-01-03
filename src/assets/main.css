@@ -1,11 +1,11 @@
 @import './base.css';
 
-@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sorts+Mill+Goudy:ital@0;1&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Sorts+Mill+Goudy:ital@0;1&display=swap';
 
 #app {
   margin: 0 auto;
   font-weight: 400;
-	font: 0.9em 'Open Sans',sans-serif;
+	font: 0.9em Jost,sans-serif;
 }
 
 a,
@@ -18,7 +18,6 @@ a,
 
 h1 {
 	font-weight: 800;
-	text-transform: uppercase;
 	span {
 		font-weight: inherit;
 		color: var(--color-accent);
@@ -36,11 +35,11 @@ h2 {
 	width: 100%;
 	&:after {
 		background: currentcolor;
-		margin-left: -100px;
+		margin-left: calc(var(--ts-spacing-x) * -1);
 		margin-top: 1rem;
-		mask: url('@/assets/h2_separator.svg') no-repeat center / contain;
+		mask: url('@/assets/h2_separator.svg') no-repeat calc(var(--ts-spacing-x) * -0.65) / contain;
 		width: 150px;
-		aspect-ratio: 103.22 / 14;
+		aspect-ratio: 104 / 16;
 		content: '';
 		display: block;
 	}

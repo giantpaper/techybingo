@@ -40,8 +40,11 @@
 	--ts-color-gold: #F7CA54;
 	--ts-color-green: #7ACA50;
 
-	--ts-color-palegray: #FAFAFA;
-	--ts-color-lightgray: #c2c2c2;
+	--ts-color-lightgray-02: #FDFDFD;
+	--ts-color-lightgray: #FAFAFA;
+
+	--ts-spacing-x: 4rem;
+	--ts-spacing-y: 4rem;
 
 	--color-accent: var(--ts-color-magenta);
 
@@ -49,7 +52,7 @@
 
 	--background-win: var(--color-accent);
 
-	--background-box: var(--ts-color-palegray);
+	--background-box: var(--ts-color-lightgray);
 }
 ::selection {
 	background: var(--color-accent);
@@ -86,6 +89,7 @@ body {
     background-color 0.5s;
   line-height: 1.6;
   font-family:
+		Jost,
     Inter,
     -apple-system,
     BlinkMacSystemFont,

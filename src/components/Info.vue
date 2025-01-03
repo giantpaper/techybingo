@@ -51,8 +51,8 @@
 	h2 {
 		margin-top: 2rem;
 		padding-bottom: 0.5rem;
-		padding-left: 3rem;
-		margin-left: -3rem;
+		padding-left: var(--ts-spacing-x);
+		margin-left: calc(var(--ts-spacing-x) * -1);
 	}
 	#info {
 		background: var(--vt-c-black);
@@ -72,7 +72,7 @@
 			visibility: hidden;
 			font-size: 1rem;
 			line-height: 160%;
-			padding: 3rem 5rem;
+			padding: var(--ts-spacing-x) var(--ts-spacing-y);
 			overflow-y: auto;
 			max-height: 100vh;
 			li {
