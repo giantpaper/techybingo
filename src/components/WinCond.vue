@@ -33,12 +33,12 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
-		width: 60ch;
+		width: 105ch;
 		padding: var(--ts-spacing-x) var(--ts-spacing-y);
 		justify-content: space-between;
-		background: var(--ts-color-lightgray-02);
+		background: var(--ts-color-lightgray);
 		figure {
-			width: calc( (100% / 3) - 2rem );
+			width: calc( (100% / 6) - 2rem );
 		}
 		img {
 			margin: 0 auto;
