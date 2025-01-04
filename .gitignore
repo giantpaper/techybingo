@@ -16,7 +16,7 @@ coverage
 
 error_log
 
-generateBoard.php
+/public/ready/
 
 /cypress/videos/
 /cypress/screenshots/
