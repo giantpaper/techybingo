@@ -29,6 +29,8 @@ function formatFileName(array) {
 	return str.replace(/^([0-9]{4})([0-9])([0-9])$/, "$10$20$3")
 }
 
+console.log(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
+
 const squares = await fetch(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
 		.then(response => response.text())
 		.then(data => data.replace(/\n$/, '').split("\n"))
