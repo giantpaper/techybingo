@@ -27,6 +27,8 @@ function formatFileName(array) {
 	return array.join('')
 }
 
+console.log(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
+
 const squares = await fetch(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
 		.then(response => response.text())
 		.then(data => data.replace(/\n$/, '').split("\n"))
