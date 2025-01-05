@@ -18,16 +18,17 @@ add_board(date('Ymd',strtotime('next Sunday')), $list);
 $log_file = './workflow_log.txt';
 
 if (file_exists($log_file) === false) {
+	var_dump('empty');
 	$logs = [];
 }
 else {
-	$logs = file_get_contents(trim($log_file));
+	$logs = explode("\n", file_get_contents(trim($log_file)));
 }
 
 if (count($logs) > 9) {
 	array_shift($logs);
-	$logs[] = date('r') . ': Workflow ran';
 }
+$logs[] = date('r') . ': Workflow ran';
 
 file_put_contents($log_file, implode("\n", $logs));
 
