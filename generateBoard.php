@@ -32,6 +32,8 @@ $wf_content[] = date('r') . ': Ran workflow';
 
 file_put_contents($wf_logs, implode("\n", $wf_content))
 
+// End logging stuff
+
 function add_board($week, $list) {
 	if (file_exists(txt($week)) === false) {
 		file_put_contents(txt($week), randomize($list));
