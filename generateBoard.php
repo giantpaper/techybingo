@@ -14,6 +14,24 @@ add_board(date('Ymd',strtotime('last Sunday')), $list);
 // Next Sundays
 add_board(date('Ymd',strtotime('next Sunday')), $list);
 
+// Log stuff
+
+$wf_logs = './workflow_logs.txt';
+
+if (file_exists($wf_logs) == false) {
+	$wf_content = [];
+}
+else {
+	$wf_content = explode("\n", trim(file_get_contents($wf_logs)));
+}
+
+if (count($wf_content) > 9) {
+	$first = array_shift($wf_content);
+}
+$wf_content[] = date('r') . ': Ran workflow';
+
+file_put_contents($wf_logs, implode("\n", $wf_content))
+
 function add_board($week, $list) {
 	if (file_exists(txt($week)) === false) {
 		file_put_contents(txt($week), randomize($list));
