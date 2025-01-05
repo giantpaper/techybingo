@@ -24,7 +24,9 @@ function formatFileName(array) {
 	array = array.map(v => {
 		return v.toString()
 	})
-	return array.join('')
+	let str = array.join('')
+
+	return str.replace(/^([0-9]{4})([0-9])([0-9])$/, "$10$20$3")
 }
 
 const squares = await fetch(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
