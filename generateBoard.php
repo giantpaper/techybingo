@@ -24,6 +24,7 @@ function add_board($week, $list) {
 function remove_board($week) {
 	if (file_exists(txt($week)) !== false) {
 		unlink(txt($week));
+		echo 'Removed '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list<br>';
 		return true;
 	}
 	return false;
