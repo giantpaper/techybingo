@@ -30,7 +30,7 @@ if (count($wf_content) > 9) {
 }
 $wf_content[] = date('r') . ': Ran workflow';
 
-file_put_contents($wf_logs, implode("\n", $wf_content))
+file_put_contents($wf_logs, implode("\n", $wf_content));
 
 // End logging stuff
 
