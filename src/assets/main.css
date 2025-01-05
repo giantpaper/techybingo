@@ -33,9 +33,6 @@ h2 {
 	text-align: left;
 	text-transform: uppercase;
 	width: 100%;
-	&:first-child {
-		margin-top: 0;
-	}
 	&:after {
 		background: currentcolor;
 		margin-left: calc(var(--ts-spacing-x) * -1);
