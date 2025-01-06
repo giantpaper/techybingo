@@ -40,7 +40,7 @@
 			border-right: 3px var(--color-border) solid;
 			border-bottom: 3px var(--color-border) solid;
 			transition: background 0.2s;
-			min-width: calc(100ch / 5);
+			min-width: calc(105ch / 5);
 			aspect-ratio: 1/1;
 			&.bingo {
 				.checked {
