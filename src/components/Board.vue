@@ -25,15 +25,23 @@
 		grid-template-columns: repeat(5, 1fr);
 		margin: 0 auto;
 		width: 105ch;
+		overflow-x: auto;
+		max-width: 100%;
 		aspect-ratio: 1/1;
 		list-style: none;
 		margin-top: 0;
 		margin-bottom: 0;
 		padding: 0;
+		min-height: 100vh;
+		@media (min-width: 768px) {
+			min-height: unset;
+		}
 		li {
 			border-right: 3px var(--color-border) solid;
 			border-bottom: 3px var(--color-border) solid;
 			transition: background 0.2s;
+			min-width: calc(100ch / 5);
+			aspect-ratio: 1/1;
 			&.bingo {
 				.checked {
 					color: white;

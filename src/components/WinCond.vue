@@ -34,11 +34,19 @@
 		flex-wrap: wrap;
 		gap: 1rem;
 		width: 105ch;
-		padding: var(--ts-spacing-x) var(--ts-spacing-y);
+		max-width: 100%;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		background: var(--ts-color-lightgray);
+		padding: calc(var(--ts-spacing-x) * 0.5) calc(var(--ts-spacing-y) * 0.5);
+		@media (min-width: 768px) {
+			padding: var(--ts-spacing-x) var(--ts-spacing-y);
+		}
 		figure {
-			width: calc( (100% / 6) - 2rem );
+			width: calc( (100% / 3) - 1rem );
+			@media (min-width: 768px) {
+				width: calc( (100% / 6) - 2rem );
+			}
 		}
 		img {
 			margin: 0 auto;

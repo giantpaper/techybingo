@@ -72,16 +72,22 @@
 			visibility: hidden;
 			font-size: 1rem;
 			line-height: 160%;
-			padding: var(--ts-spacing-x) var(--ts-spacing-y);
 			overflow-y: auto;
 			max-height: 100vh;
+			padding: calc(var(--ts-spacing-x) * 0.5) calc(var(--ts-spacing-y) * 0.5);
+			@media (min-width: 768px) {
+				padding: var(--ts-spacing-x) var(--ts-spacing-y);
+			}
 			li {
 				margin-bottom: 1rem;
 			}
 		}
 		&.open {
-			width: 80%;
+			width: 90%;
 			max-width: 900px;
+			@media (min-width: 768px) {
+				width: 80%;
+			}
 			#info_content {
 				visibility: visible;
 			}
