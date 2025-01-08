@@ -34,7 +34,9 @@
 		padding: 0;
 		min-height: 100vh;
 		@media (min-width: 768px) {
+			/* Remove scrollbar on larger displays */
 			min-height: unset;
+			overflow: unset;
 		}
 		li {
 			border-right: 3px var(--color-border) solid;
