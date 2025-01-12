@@ -26,7 +26,12 @@ function formatFileName(array) {
 	})
 	let str = array.join('')
 
-	return str.replace(/^([0-9]{4})([0-9])([0-9])$/, "$10$20$3")
+	if (array[1].length < 2 || array[2].length < 2) {
+		let regex = new RegExp(array[1].length < 2 ? '^([0-9]{4})([0-9])([0-9])$' : '^([0-9]{4})([0-9])([0-9]{2})$')
+		let replace = array[1].length < 2 ? "$10$20$3" : "$10$2$3"
+		return str.replace(regex, replace)
+	}
+	return str
 }
 
 const squares = await fetch(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
