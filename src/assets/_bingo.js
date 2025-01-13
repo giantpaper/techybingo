@@ -68,6 +68,9 @@ export default class Bingo {
 	}
 	// Check win
 	ifWin(listValue, i, event) {
+		if (listValue === false) {
+			return false
+		}
 		if (event === 'clicked') {
 			this.listValue = this.progress.update(listValue)
 		}

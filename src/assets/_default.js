@@ -34,17 +34,23 @@ function formatFileName(array) {
 	return str
 }
 
-const squares = await fetch(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
+const url = `./ready/${formatFileName(boards.thisWeeks)}.txt`
+
+const response = await fetch(url)
+
+const squares = await fetch(url)
 		.then(response => response.text())
 		.then(data => data.replace(/\n$/, '').split("\n"))
-		.catch(err => err)
+		.catch(err => console.error(err))
+
+const MODE = import.meta.env.VITE_MODE
 
 export default function DefaultValues () {
 	let l = []
 	let i = 0
 
-	if ((squares.length !== 24 && squares[0].match(/^</)) || typeof squares !== 'array') {
-		console.error(`RUH RUH: Cannot find ./ready/${formatFileName(boards.thisWeeks)}.txt`)
+	if (MODE === 'production' && response.status === 404 || (MODE === 'development' && squares.length !== 24 && squares[0].match(/^</))) {
+		console.error(`RUH RUH: Cannot find ./ready/${formatFileName(boards.thisWeeks)}.txt`, squares)
 		return false
 	}
 
