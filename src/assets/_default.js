@@ -38,8 +38,6 @@ const squares = await fetch(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
 		.then(response => response.text())
 		.then(data => data.replace(/\n$/, '').split("\n"))
 		.catch(err => console.error(err))
-		// .replace() -- removes blank space from EOF
-		// .split() -- turn into array
 
 export default function DefaultValues () {
 	let l = []
