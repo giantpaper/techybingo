@@ -37,6 +37,7 @@ function formatFileName(array) {
 const squares = await fetch(`noexiste.txt` || `./ready/${formatFileName(boards.thisWeeks)}.txt`)
 		.then(response => response.text())
 		.then(data => data.replace(/\n$/, '').split("\n"))
+		.catch(err => console.error(err))
 		// .replace() -- removes blank space from EOF
 		// .split() -- turn into array
 
@@ -44,7 +45,7 @@ export default function DefaultValues () {
 	let l = []
 	let i = 0
 
-	if (squares.length !== 24 && squares[0].match(/^</)) {
+	if (typeof squares !== 'array' || (squares.length !== 24 && squares[0].match(/^</))) {
 		console.error(`RUH RUH: Cannot find ./ready/${formatFileName(boards.thisWeeks)}.txt`)
 		return false
 	}
