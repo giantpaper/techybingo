@@ -1,6 +1,6 @@
 <template>
 	<h1>Week of <span>{{ bingodate.week() }}</span></h1>
-	<ul v-if="list.length > 0" class="board">
+	<ul v-if="list !== false" class="board">
 		<li v-for="(item, i) in list" :ref="li => (liList[i] = li)">
 			<div class="free-space checked" v-if="item.label===`Free Space`">
 				FREE SPACE
@@ -15,7 +15,7 @@
 		<h3>Ruh Roh</h3>
 		<p>Major error! Check back soon!</p>
 	</div>
-	<p v-if="list.length > 0" class="countdown"><strong>{{ COUNTDOWN }}</strong><br /><span>Till new bingo cards</span></p>
+	<p v-if="list !== false" class="countdown"><strong>{{ COUNTDOWN }}</strong><br /><span>Till new bingo cards</span></p>
 	<WinCond />
 	<Info />
 
