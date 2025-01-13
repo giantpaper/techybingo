@@ -8,11 +8,14 @@ define('FILE', './public/squares.txt');
 $list = array_map('trim', file(FILE));
 
 // Remove old board
-remove_board(date('Ymd',strtotime('3 weeks ago Sunday')), $list);
+remove_board(date('Y-m-d',strtotime('3 weeks ago Sunday')), $list);
 // Current Sunday
-add_board(date('Ymd',strtotime('last Sunday')), $list);
+if (date('D') == 'Sun') {
+	add_board(date('Y-m-d'), $list);
+}
+add_board(date('Y-m-d',strtotime('last Sunday')), $list);
 // Next Sundays
-add_board(date('Ymd',strtotime('next Sunday')), $list);
+add_board(date('Y-m-d',strtotime('next Sunday')), $list);
 
 // Log stuff
 
@@ -37,7 +40,7 @@ file_put_contents($wf_logs, implode("\n", $wf_content));
 function add_board($week, $list) {
 	if (file_exists(txt($week)) === false) {
 		file_put_contents(txt($week), randomize($list));
-		echo 'Added '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list<br>';
+		echo 'Added '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list' . "\n";
 		return true;
 	}
 	return false;
@@ -45,7 +48,7 @@ function add_board($week, $list) {
 function remove_board($week) {
 	if (file_exists(txt($week)) !== false) {
 		unlink(txt($week));
-		echo 'Removed '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list<br>';
+		echo 'Removed '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list' . "\n";
 		return true;
 	}
 	return false;

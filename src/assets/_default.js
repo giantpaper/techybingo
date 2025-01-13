@@ -24,28 +24,30 @@ function formatFileName(array) {
 	array = array.map(v => {
 		return v.toString()
 	})
-	let str = array.join('')
+	let str = array.join('-')
 
 	if (array[1].length < 2 || array[2].length < 2) {
-		let regex = new RegExp(array[1].length < 2 ? '^([0-9]{4})([0-9])([0-9])$' : '^([0-9]{4})([0-9])([0-9]{2})$')
-		let replace = array[1].length < 2 ? "$10$20$3" : "$10$2$3"
+		let regex = new RegExp('^([0-9]{4})\-([0-9]{1,2})\-([0-9]{1,2})$')
+		let replace = array[2].length < 2 ? "$1-0$2-0$3" : "$1-0$2-$3"
 		return str.replace(regex, replace)
 	}
 	return str
 }
 
-console.log(`${formatFileName(boards.thisWeeks)}`)
-
 const squares = await fetch(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
 		.then(response => response.text())
 		.then(data => data.replace(/\n$/, '').split("\n"))
-
 		// .replace() -- removes blank space from EOF
 		// .split() -- turn into array
 
 export default function DefaultValues () {
 	let l = []
 	let i = 0
+
+	if (squares.length !== 24 && squares[0].match(/^</)) {
+		console.error(`RUH RUH: Cannot find ./ready/${formatFileName(boards.thisWeeks)}.txt`)
+		return false
+	}
 
 	// Randomize dat array
 	shuffle(squares)

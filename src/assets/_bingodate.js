@@ -59,10 +59,10 @@ export default class BingoDate {
 	nextSunday() {
 		return new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), this.sunday() + 7)
 	}
-	weekNumber() {
+	weekNumber(date) {
 		// Based off of
 		// https://www.geeksforgeeks.org/calculate-current-week-number-in-javascript/
-		let today = this.currentDate
+		let today = date || this.currentDate
 		let januaryFirst = new Date(today.getFullYear(), 0, 1)
 
 		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay
