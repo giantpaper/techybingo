@@ -34,7 +34,7 @@ function formatFileName(array) {
 	return str
 }
 
-const squares = await fetch(`noexiste.txt` || `./ready/${formatFileName(boards.thisWeeks)}.txt`)
+const squares = await fetch(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
 		.then(response => response.text())
 		.then(data => data.replace(/\n$/, '').split("\n"))
 		.catch(err => console.error(err))
