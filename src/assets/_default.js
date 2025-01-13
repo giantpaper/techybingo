@@ -45,7 +45,7 @@ export default function DefaultValues () {
 
 	if (typeof squares !== 'array' || (squares.length !== 24 && squares[0].match(/^</))) {
 		console.error(`RUH RUH: Cannot find ./ready/${formatFileName(boards.thisWeeks)}.txt`, squares)
-		console.error(typeof squares, (squares.length !== 24 && squares[0].match(/^</)))
+		console.debug(typeof squares, (squares.length !== 24 && squares[0].match(/^</)))
 		return false
 	}
 
