@@ -211,7 +211,6 @@ function ifWin(list, i, event) {
 	// Apparently this was running before the list = ref even had a chance to update
 	// For some reason, setTimeout() works and onMounted() doesn't. I dunno why
 	setTimeout(() => {
-		console.log(list.value)
 		if (list.value === false) {
 			return false
 		}
