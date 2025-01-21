@@ -1,16 +1,20 @@
 <template>
 	<h1>Week of <span>{{ bingodate.week() }}</span></h1>
-	<ul v-if="list !== false" class="board">
-		<li v-for="(item, i) in list" :ref="li => (liList[i] = li)">
-			<div class="free-space checked" v-if="item.label===`Free Space`">
-				FREE SPACE
-			</div>
-			<label v-else :class="{ checked: item.checked, }">
-				<input type="checkbox" v-model="item.checked" @click="ifWin(list, i, 'clicked')" v-if="item.disabled===false" />
-				<span v-html="displayLabel(item.label, i)"></span>
-			</label>
-		</li>
-	</ul>
+	<div v-if="list !== false" class="board_container relative mt-16">
+		<div class="letters grid grid-cols-5 pb-2 h-16"><em class="flex justify-center items-end text-center font-bold not-italic text-lg" v-for="letter in letters">{{ letter }}</em></div>
+		<div class="numbers grid grid-rows-5 pr-2"><em class="flex items-center text-center font-bold not-italic text-lg" v-for="number in numbers">{{ number.value }}</em></div>
+		<ul class="board">
+			<li v-for="(item, i) in list" :ref="li => (liList[i] = li)">
+				<div class="free-space checked" v-if="item.label===`Free Space`">
+					FREE SPACE
+				</div>
+				<label v-else :class="{ checked: item.checked, }">
+					<input type="checkbox" v-model="item.checked" @click="ifWin(list, i, 'clicked')" v-if="item.disabled===false" />
+					<span v-html="displayLabel(item.label, i)"></span>
+				</label>
+			</li>
+		</ul>
+	</div>
 	<div v-else class="error">
 		<h3>Ruh Roh</h3>
 		<p>Major error! Check back soon!</p>
@@ -22,6 +26,18 @@
 	<Footer />
 </template>
 <style lang="scss" scoped>
+	.numbers {
+		position: absolute;
+		right: 100%;
+		top: 0;
+		bottom: 0;
+	}
+	.letters {
+		position: absolute;
+		bottom: 100%;
+		left: 0;
+		right: 0;
+	}
 	.error{
 		text-align: center;
 	}
@@ -170,9 +186,15 @@ const disabled = ref(false)
 const bingo = new Bingo(list.value)
 const bingodate = new BingoDate()
 
+const letters_i = ref(0)
+const numbers_i = ref(0)
+
 list.value = bingo.list()
 
 ifWin(list.value)
+
+const letters = ref(['B','I','N','G','O',])
+const numbers = ref(range(1,6))
 
 function displayLabel (item, i) {
 	// https://www.freecodecamp.org/news/how-to-use-regex-to-match-emoji-including-discord-emotes/
