@@ -24,21 +24,35 @@ function formatFileName(array) {
 	array = array.map(v => {
 		return v.toString()
 	})
-	return array.join('')
+	let str = array.join('-')
+
+	if (array[1].length < 2 || array[2].length < 2) {
+		let regex = new RegExp('^([0-9]{4})\-([0-9]{1,2})\-([0-9]{1,2})$')
+		let replace = array[2].length < 2 ? "$1-0$2-0$3" : "$1-0$2-$3"
+		return str.replace(regex, replace)
+	}
+	return str
 }
 
-console.log(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
+const url = `./ready/${formatFileName(boards.thisWeeks)}.txt`
 
-const squares = await fetch(`./ready/${formatFileName(boards.thisWeeks)}.txt`)
+const response = await fetch(url)
+
+const squares = await fetch(url)
 		.then(response => response.text())
 		.then(data => data.replace(/\n$/, '').split("\n"))
+		.catch(err => console.error(err))
 
-		// .replace() -- removes blank space from EOF
-		// .split() -- turn into array
+const MODE = import.meta.env.VITE_MODE
 
 export default function DefaultValues () {
 	let l = []
 	let i = 0
+
+	if (MODE === 'production' && response.status === 404 || (MODE === 'development' && squares.length !== 24 && squares[0].match(/^</))) {
+		console.error(`RUH RUH: Cannot find ./ready/${formatFileName(boards.thisWeeks)}.txt`, squares)
+		return false
+	}
 
 	// Randomize dat array
 	shuffle(squares)

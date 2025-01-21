@@ -1,6 +1,6 @@
 <template>
 	<h1>Week of <span>{{ bingodate.week() }}</span></h1>
-	<ul class="board">
+	<ul v-if="list !== false" class="board">
 		<li v-for="(item, i) in list" :ref="li => (liList[i] = li)">
 			<div class="free-space checked" v-if="item.label===`Free Space`">
 				FREE SPACE
@@ -11,13 +11,20 @@
 			</label>
 		</li>
 	</ul>
-	<p class="countdown"><strong>{{ COUNTDOWN }}</strong><br /><span>Till new bingo cards</span></p>
+	<div v-else class="error">
+		<h3>Ruh Roh</h3>
+		<p>Major error! Check back soon!</p>
+	</div>
+	<p v-if="list !== false" class="countdown"><strong>{{ COUNTDOWN }}</strong><br /><span>Till new bingo cards</span></p>
 	<WinCond />
 	<Info />
 
 	<Footer />
 </template>
 <style lang="scss" scoped>
+	.error{
+		text-align: center;
+	}
 	.board {
 		border-top: 3px var(--color-border) solid;
 		border-left: 3px var(--color-border) solid;
@@ -25,15 +32,25 @@
 		grid-template-columns: repeat(5, 1fr);
 		margin: 0 auto;
 		width: 105ch;
+		overflow-x: auto;
+		max-width: 100%;
 		aspect-ratio: 1/1;
 		list-style: none;
 		margin-top: 0;
 		margin-bottom: 0;
 		padding: 0;
+		min-height: 100vh;
+		@media (min-width: 768px) {
+			/* Remove scrollbar on larger displays */
+			min-height: unset;
+			overflow: unset;
+		}
 		li {
 			border-right: 3px var(--color-border) solid;
 			border-bottom: 3px var(--color-border) solid;
 			transition: background 0.2s;
+			min-width: calc(105ch / 5);
+			aspect-ratio: 1/1;
 			&.bingo {
 				.checked {
 					color: white;
@@ -194,6 +211,9 @@ function ifWin(list, i, event) {
 	// Apparently this was running before the list = ref even had a chance to update
 	// For some reason, setTimeout() works and onMounted() doesn't. I dunno why
 	setTimeout(() => {
+		if (list.value !== false) {
+			return false
+		}
 		let win = bingo.ifWin(list, i, event)
 		list.value = bingo.list()
 
