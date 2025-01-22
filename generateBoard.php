@@ -7,6 +7,10 @@ define('FILE', './public/squares.txt');
 
 $list = array_map('trim', file(FILE));
 
+$today = strtotime('today');
+
+$sunday__next = strtotime('next Sunday');
+
 // Remove old board
 remove_board(date('Y-m-d',strtotime('3 weeks ago Sunday')), $list);
 // Current Sunday
@@ -15,7 +19,10 @@ if (date('D') == 'Sun') {
 }
 add_board(date('Y-m-d',strtotime('last Sunday')), $list);
 // Next Sundays
-add_board(date('Y-m-d',strtotime('next Sunday')), $list);
+// Do next week's list if it's not Sunday or Saturday
+if ( !(strtotime('next Saturday') <= $today && $today < $sunday__next) ) {
+	add_board(date('Y-m-d', $sunday__next), $list);
+}
 
 // Log stuff
 
