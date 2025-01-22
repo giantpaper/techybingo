@@ -1,8 +1,10 @@
 <template>
 	<h1>Week of <span>{{ bingodate.week() }}</span></h1>
-	<div v-if="list !== false" class="board_container relative mt-16">
-		<div class="letters grid grid-cols-5 pb-2 h-16"><em class="flex justify-center items-end text-center font-bold not-italic text-lg" v-for="letter in letters">{{ letter }}</em></div>
-		<div class="numbers grid grid-rows-5 pr-2"><em class="flex items-center text-center font-bold not-italic text-lg" v-for="number in numbers">{{ number.value }}</em></div>
+	<div v-if="list !== false" class="board_container relative my-16">
+		<div class="labels letters grid grid-cols-5 py-2 h-8"><em class="flex justify-center items-end text-center font-bold not-italic text-lg" v-for="letter in letters">{{ letter }}</em></div>
+		<div class="labels letters grid grid-cols-5 py-2 h-8"><em class="flex justify-center items-end text-center font-bold not-italic text-lg" v-for="letter in letters">{{ letter }}</em></div>
+		<div class="labels numbers grid grid-rows-5 px-2"><em class="flex items-center text-center font-bold not-italic text-lg h-[20%]" v-for="number in numbers">{{ number.value }}</em></div>
+		<div class="labels numbers grid grid-rows-5 px-2"><em class="flex items-center text-center font-bold not-italic text-lg h-[20%]" v-for="number in numbers">{{ number.value }}</em></div>
 		<ul class="board">
 			<li v-for="(item, i) in list" :ref="li => (liList[i] = li)">
 				<div class="free-space checked" v-if="item.label===`Free Space`">
@@ -26,19 +28,42 @@
 	<Footer />
 </template>
 <style lang="scss" scoped>
-	.numbers {
-		position: absolute;
-		right: 100%;
-		top: 0;
-		bottom: 0;
+	.labels {
+		display: flex;
+		span {
+			display: block;
+			height: 100%;
+		}
 	}
 	.letters {
 		position: absolute;
+		align-items: center;
+		justify-content: space-around;
 		bottom: 100%;
 		left: 0;
 		right: 0;
+		&:nth-child(1) {
+			bottom: 100%;
+		}
+		&:nth-child(2) {
+			top: 100%;
+		}
 	}
-	.error{
+	.numbers {
+		position: absolute;
+		justify-content: center;
+		align-items: stretch;
+		top: 0;
+		bottom: 0;
+		flex-direction: column;
+		&:nth-child(3) {
+			left: 100%;
+		}
+		&:nth-child(4) {
+			right: 100%;
+		}
+	}
+	.error {
 		text-align: center;
 	}
 	.board {
