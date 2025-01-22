@@ -1,6 +1,6 @@
 <template>
 
-	<section class="win_cond">
+	<section class="win_cond flex flex-wrap gap-4 max-w-full justify-between">
 		<h2>Win Conditions:</h2>
 		<figure>
 			<img src="@/assets/win_row.svg" width="75" height="75" alt="" class="win_row" />
@@ -30,13 +30,7 @@
 </template>
 <style lang="scss" scoped>
 	.win_cond {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1rem;
 		width: 105ch;
-		max-width: 100%;
-		flex-wrap: wrap;
-		justify-content: space-between;
 		background: var(--ts-color-lightgray);
 		padding: calc(var(--ts-spacing-x) * 0.5) calc(var(--ts-spacing-y) * 0.5);
 		@media (min-width: 768px) {
