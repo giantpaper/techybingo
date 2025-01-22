@@ -43,6 +43,10 @@ const squares = await fetch(url)
 		.then(data => data.replace(/\n$/, '').split("\n"))
 		.catch(err => console.error(err))
 
+if (import.meta.env.VITE_MODE === 'development') {
+	console.log(`FILE: ${url}`)
+}
+
 const MODE = import.meta.env.VITE_MODE
 
 export default function DefaultValues () {

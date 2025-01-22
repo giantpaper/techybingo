@@ -1,3 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 @import './base.css';
 
 @import 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Sorts+Mill+Goudy:ital@0;1&display=swap';
@@ -18,6 +22,7 @@ a,
 
 h1 {
 	font-weight: 800;
+	font-size: 2rem;
 	span {
 		font-weight: inherit;
 		color: var(--color-accent);

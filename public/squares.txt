@@ -9,7 +9,6 @@ Client said "can we get on a call?" 🤙
 Client's site has a lot of ^outdated^ software/dependencies/plugins
 Created a ^workday playlist^ 🎧
 ^Did household chores^ on your lunchbreak 🧹
-Forgot to ^attach a file^ to an email 🖇️
 Forgot to ^update^ your Slack status from 'away' to 'active' after lunch 🫢
 Got ^asked to help^ with household chores during work 🧺
 Got takeout/went out to eat for lunch 🥡
@@ -35,6 +34,7 @@ Worked in your backyard
 You really did work ^in your pajamas^
 You/someone else followed up for ^an update on a task^ 🙋
 You/someone else forgot ^what day it is^
+You/someone else forgot to ^attach a file^ to an email 🖇️
 You/someone else joked about ^how long^ your "commute" is 🤭
 You/someone else needed to ^restart^ after computer glitches/crashes 💥
 You/someone else shared some ^epic software gore^
