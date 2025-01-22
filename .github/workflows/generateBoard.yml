@@ -21,7 +21,7 @@ jobs:
     # PHP GitHub Action created by https://github.com/nanasess
     - uses: actions/checkout@master
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     - uses: nanasess/setup-php@master
       with:
         php-version: '8.3'
