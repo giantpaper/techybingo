@@ -9,22 +9,7 @@ $list = array_map('trim', file(FILE));
 
 $today = strtotime('today');
 
-$sunday__next = strtotime('next Sunday');
-
-// Remove old board
-remove_board(date('Y-m-d',strtotime('3 weeks ago Sunday')), $list);
-// Current Sunday
-if (date('D') == 'Sun') {
-	add_board(date('Y-m-d'), $list);
-}
-add_board(date('Y-m-d',strtotime('last Sunday')), $list);
-// Next Sundays
-// Do next week's list if it's not Sunday or Saturday
-if ( !(strtotime('next Saturday') <= $today && $today < $sunday__next) ) {
-	add_board(date('Y-m-d', $sunday__next), $list);
-}
-
-// Log stuff
+// Setup logging
 
 $wf_logs = './workflow_logs.txt';
 
@@ -38,25 +23,44 @@ else {
 if (count($wf_content) > 9) {
 	$first = array_shift($wf_content);
 }
-$wf_content[] = date('r') . ': Ran workflow';
+$new_wf_content[] = date('r') . ': Ran workflow';
+// End setup
 
-file_put_contents($wf_logs, implode("\n", $wf_content));
+// Remove old board
+$new_wf_content[] = remove_board(date('Y-m-d',strtotime('3 weeks ago Sunday')), $list);
+// Current Sunday
+if (date('D') == 'Sun') {
+	$new_wf_content[] = add_board(date('Y-m-d'), $list);
+}
+$new_wf_content[] = add_board(date('Y-m-d',strtotime('last Sunday')), $list);
+// Next Sundays
+// Do next week's list if it's not Sunday or Saturday
+if ( date('D') != 'Sun' && date('D') != 'Sat' ) {
+	$new_wf_content[] = add_board(date('Y-m-d', strtotime('next Sunday')), $list);
+}
+
+// Log stuff
+
+$output = implode("\n", array_merge($wf_content, $new_wf_content));
+echo implode("\n", $new_wf_content);
+
+file_put_contents($wf_logs, $output);
 
 // End logging stuff
 
 function add_board($week, $list) {
 	if (file_exists(txt($week)) === false) {
 		file_put_contents(txt($week), randomize($list));
-		echo 'Added '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list' . "\n";
-		return true;
+		$return = '[+] Added '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list' . "\n";
+		return $return;
 	}
 	return false;
 }
 function remove_board($week) {
 	if (file_exists(txt($week)) !== false) {
 		unlink(txt($week));
-		echo 'Removed '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list' . "\n";
-		return true;
+		$return = '[-] Removed '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list' . "\n";
+		return $return;
 	}
 	return false;
 }
