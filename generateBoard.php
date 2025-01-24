@@ -54,7 +54,7 @@ file_put_contents($wf_logs, $output);
 function add_board($week, $list) {
 	if (file_exists(txt($week)) === false) {
 		$output = file_put_contents(txt($week), randomize($list));
-		$return = '[+] Added '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list' . "\n";
+		$return = '[+] Added '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list - ' . $output . "B large\n";
 
 		if ($output === false) {
 			$return = 'Could not do file_put_contents';
