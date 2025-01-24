@@ -38,6 +38,9 @@ $new_wf_content[] = add_board(date('Y-m-d',strtotime('last Sunday')), $list);
 if ( date('D') != 'Sun' && date('D') != 'Sat' ) {
 	$new_wf_content[] = add_board(date('Y-m-d', strtotime('next Sunday')), $list);
 }
+else {
+	$new_wf_content[] = 'Today is '.date('D'). ' so did not do '.date('Y-m-d', strtotime('next Sunday')).'\'s list';
+}
 
 // Log stuff
 
@@ -50,11 +53,15 @@ file_put_contents($wf_logs, $output);
 
 function add_board($week, $list) {
 	if (file_exists(txt($week)) === false) {
-		file_put_contents(txt($week), randomize($list));
+		$output = file_put_contents(txt($week), randomize($list));
 		$return = '[+] Added '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list' . "\n";
+
+		if ($output === false) {
+			$return = 'Could not do file_put_contents';
+		}
 		return $return;
 	}
-	return false;
+	return $week. ' already exists so did not create new file';
 }
 function remove_board($week) {
 	if (file_exists(txt($week)) !== false) {
@@ -62,7 +69,7 @@ function remove_board($week) {
 		$return = '[-] Removed '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list' . "\n";
 		return $return;
 	}
-	return false;
+	return $week. ' does not exist so nothing was deleted';
 }
 
 function txt($date) {
