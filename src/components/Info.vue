@@ -6,7 +6,9 @@
 
 			<ol>
 				<li>Check off squares that apply throughout your week. Ex. If either Gmail, Helpscout, Github, etc go down, check off <em>Helpscout/<wbr>Github/<wbr>Shopify/<wbr>Cloudflare/<wbr>Gmail is down</em></li>
-				<li>Once you've filled up any row, and column, any diagonal, etc (see Win Conditions) with checked items, you've got BINGO.</li>
+				<li>Once you've filled up any row, and column, any diagonal, etc (see Win Conditions) with checked items, you've got a BINGO.</li>
+				<li><strong>ON FRIDAY—</strong>If you got a BINGO, talk about the circumstances that led up to the checked squares. Reference the coordinates on the grid.
+				<blockquote>Ex. "I have <strong>Client backtracks on a new thing they asked for after people complained</strong> on B-5. The client wanted an animated black and white favicon on their site where the black and white would alternate, like some sort of blinking, strobing nightmare. They asked us to change it back after finding out how unpopular it was."</blockquote></li>
 			</ol>
 
 			<h2>FAQs</h2>
