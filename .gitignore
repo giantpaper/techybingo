@@ -16,7 +16,8 @@ coverage
 
 error_log
 
-workflow_log.txt
+/public/ready/
+workflow_logs.txt
 
 /cypress/videos/
 /cypress/screenshots/
