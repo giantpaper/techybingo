@@ -5,14 +5,14 @@ date_default_timezone_set('America/Los_Angeles');
 
 class Generate {
 	protected $great_list = [];
-	protected $ready_list_file = './ready/weeklyLists.json';
-	protected $great_list_file = './squares.txt';
+	protected $ready_list_file = './public/ready/weeklyLists.json';
+	protected $great_list_file = './public/squares.txt';
 	protected $ready_list = [];
 	protected $previous_sunday = '';
 	protected $current_sunday = '';
 	protected $upcoming_sunday = '';
 	protected $workflow = [
-		'file' => '../workflow_logs.txt',
+		'file' => './workflow_logs.txt',
 		'heading' => '%s - RAN WORKFLOW',
 		'contents' => [],
 	];
