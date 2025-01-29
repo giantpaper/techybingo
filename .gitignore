@@ -22,6 +22,7 @@ workflow_log.txt
 /cypress/screenshots/
 
 # Editor directories and files
+.nova/*
 .vscode/*
 !.vscode/extensions.json
 .idea
