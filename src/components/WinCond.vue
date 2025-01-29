@@ -32,9 +32,9 @@
 	.win_cond {
 		width: 105ch;
 		background: var(--ts-color-lightgray);
-		padding: calc(var(--ts-spacing-x) * 0.5) calc(var(--ts-spacing-y) * 0.5);
+		padding: calc(var(--ts-spacing-y) * 0.5) calc(var(--ts-spacing-x) * 0.5);
 		@media (min-width: 768px) {
-			padding: var(--ts-spacing-x) var(--ts-spacing-y);
+			padding: var(--ts-spacing-y) var(--ts-spacing-x);
 		}
 		figure {
 			width: calc( (100% / 3) - 1rem );

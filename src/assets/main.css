@@ -45,7 +45,7 @@ h2 {
 		background: currentcolor;
 		margin-left: calc(var(--ts-spacing-x) * -1);
 		margin-top: 1rem;
-		mask: url('@/assets/h2_separator.svg') no-repeat calc(var(--ts-spacing-x) * -0.65) / contain;
+		mask: url('@/assets/h2_separator.svg') no-repeat calc((var(--ts-spacing-x) - 80px) * -0.6) / contain;
 		width: 150px;
 		aspect-ratio: 104 / 16;
 		content: '';

@@ -28,6 +28,9 @@
 </template>
 
 <style lang="scss" scoped>
+	blockquote {
+		margin: 1rem 0 0 1rem;
+	}
 	button#infoBtn {
 		appearance: none;
 		box-sizing: content-box;
@@ -74,9 +77,9 @@
 			line-height: 160%;
 			overflow-y: auto;
 			max-height: 100vh;
-			padding: calc(var(--ts-spacing-x) * 0.5) calc(var(--ts-spacing-y) * 0.5);
+			padding: calc(var(--ts-spacing-y) * 0.5) calc(var(--ts-spacing-x) * 0.5);
 			@media (min-width: 768px) {
-				padding: var(--ts-spacing-x) var(--ts-spacing-y);
+				padding: var(--ts-spacing-y) var(--ts-spacing-x);
 			}
 			li {
 				margin-bottom: 1rem;
