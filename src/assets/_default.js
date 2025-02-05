@@ -43,6 +43,7 @@ const squares = await fetch(url)
 		.then(data => data.replace(/\n$/, '').split("\n"))
 		.catch(err => console.error(err))
 
+// Outputs the list file to console -- for debugging purposes
 if (import.meta.env.VITE_MODE === 'development') {
 	console.log(`FILE: ${url}`)
 }
@@ -66,16 +67,39 @@ export default function DefaultValues () {
 		squares.splice(12, 0, `Free Space`)
 	}
 
+	const letter_list = ['B','I','N','G','O']
+
 	squares.forEach(square => {
 		// Ignore blank lines
 		if (square !== '') {
+			let col
+
+			if (i % 5 === 0) {
+				col = 'B'
+			}
+			if (i % 5 === 1) {
+				col = 'I'
+			}
+			if (i % 5 === 2) {
+				col = 'N'
+			}
+			if (i % 5 === 3) {
+				col = 'G'
+			}
+			if (i % 5 === 4) {
+				col = 'O'
+			}
+			i++
+
 			// Make sure free space is always checked
 			let newItem = {
-				id: i++,
+				id: i,
 				label: square,
 				checked: square === `Free Space` ? true : false,
 				bingo: false,
 				disabled: false,
+				row: (Math.ceil(i / 5) * 5) / 5,
+				col: letter_list[(i - 1) % 5],
 			}
 			l.push(newItem)
 		}

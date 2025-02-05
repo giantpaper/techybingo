@@ -1,16 +1,13 @@
 <template>
 	<h1>Week of <span>{{ bingodate.week() }}</span></h1>
 	<div v-if="list !== false" class="board_container relative my-16">
-		<div class="labels letters grid grid-cols-5 py-2 h-8"><em class="flex justify-center items-end text-center font-bold not-italic text-lg" v-for="letter in letters">{{ letter }}</em></div>
-		<div class="labels letters grid grid-cols-5 py-2 h-8"><em class="flex justify-center items-end text-center font-bold not-italic text-lg" v-for="letter in letters">{{ letter }}</em></div>
-		<div class="labels numbers grid grid-rows-5 px-2"><em class="flex items-center text-center font-bold not-italic text-lg h-[20%]" v-for="number in numbers">{{ number.value }}</em></div>
-		<div class="labels numbers grid grid-rows-5 px-2"><em class="flex items-center text-center font-bold not-italic text-lg h-[20%]" v-for="number in numbers">{{ number.value }}</em></div>
 		<ul class="board">
 			<li v-for="(item, i) in list" :ref="li => (liList[i] = li)">
 				<div class="free-space checked" v-if="item.label===`Free Space`">
 					FREE SPACE
 				</div>
 				<label v-else :class="{ checked: item.checked, }">
+					<span class="bg_coords">{{ `${item.col}-${item.row}` }}</span>
 					<input type="checkbox" v-model="item.checked" @click="ifWin(list, i, 'clicked')" v-if="item.disabled===false" />
 					<span v-html="displayLabel(item.label, i)"></span>
 				</label>
@@ -172,6 +169,14 @@
 		span {
 		}
 	}
+	.bg_coords {
+		font-size: 4rem;
+		display: block;
+		position: absolute;
+		top: 1rem;
+		left: 0.25rem;
+		opacity: 0.0625;
+	}
 	.bingo {
 		background: var(--background-win);
 		.free-space {
@@ -217,9 +222,6 @@ const numbers_i = ref(0)
 list.value = bingo.list()
 
 ifWin(list.value)
-
-const letters = ref(['B','I','N','G','O',])
-const numbers = ref(range(1,6))
 
 function displayLabel (item, i) {
 	// https://www.freecodecamp.org/news/how-to-use-regex-to-match-emoji-including-discord-emotes/
