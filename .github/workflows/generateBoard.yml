@@ -36,7 +36,7 @@ jobs:
 
         git add *
 
-        git commit -am "GH Action   ./ready/* Updated    $(date)"
+        git commit -am "GH Action   ./public/ready/* Updated    $(date)"
 
         git push -f origin main
     - name: Push changes # push the output folder to your repo
