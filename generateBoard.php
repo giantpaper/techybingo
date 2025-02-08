@@ -35,8 +35,9 @@ if (date('D') == 'Sun') {
 $new_wf_content[] = add_board(date('Y-m-d',strtotime('last Sunday')), $list);
 // Next Sundays
 // Do next week's list if it's not Sunday or Saturday
-if ( date('D') != 'Sun' && date('D') != 'Sat' ) {
-	$new_wf_content[] = add_board(date('Y-m-d', strtotime('next Sunday')), $list);
+$next_sunday_filename = date('Y-m-d', strtotime('next Sunday'));
+if ( (date('D') != 'Sun' && date('D') != 'Sat') || !file_exists($next_sunday_filename)) {
+	$new_wf_content[] = add_board($next_sunday_filename, $list);
 }
 else {
 	$new_wf_content[] = 'Today is '.date('D'). ' so did not do '.date('Y-m-d', strtotime('next Sunday')).'\'s list';
