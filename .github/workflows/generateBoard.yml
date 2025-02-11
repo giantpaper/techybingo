@@ -7,7 +7,7 @@ on:
     branches: [ main ]
   # Can add a schedule cron of when to run action but leaving this commented out for now
   schedule:
-   - cron: '0 23 * * 1-5'
+   - cron: '0 22,23 * * 1-5'
   # Allows you to run this workflow manually from the Actions tab
   # workflow_dispatch:
 
