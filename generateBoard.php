@@ -28,12 +28,14 @@ $new_wf_content[] = date('r') . ': Ran workflow';
 
 // Remove old board
 $new_wf_content[] = remove_board(date('Y-m-d',strtotime('3 weeks ago Sunday')), $list);
+
 // Current Sunday
 if (date('D') == 'Sun') {
 	$new_wf_content[] = add_board(date('Y-m-d'), $list);
 }
 $new_wf_content[] = add_board(date('Y-m-d',strtotime('last Sunday')), $list);
-// Next Sundays
+
+// NEXT SUNDAY'S
 // Do next week's list if it's not Sunday or Saturday
 $next_sunday_filename = date('Y-m-d', strtotime('next Sunday'));
 if ( (date('D') != 'Sun' && date('D') != 'Sat') || !file_exists($next_sunday_filename)) {
