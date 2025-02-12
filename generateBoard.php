@@ -56,7 +56,7 @@ file_put_contents($wf_logs, $output);
 
 function add_board($oldfilename, $newfilename, $list) {
 	if (file_exists(txt($week)) === false) {
-		rename(txt($oldfilename), txt($newfilename))
+		rename(txt($oldfilename), txt($newfilename));
 		$output = file_put_contents(txt($newfilename), randomize($list));
 		$return = '[+] Added '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $newfilename).'\'s list - ' . $output . "B large\n";
 
