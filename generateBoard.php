@@ -31,15 +31,15 @@ $new_wf_content[] = remove_board(date('Y-m-d',strtotime('3 weeks ago Sunday')), 
 
 // Current Sunday
 if (date('D') == 'Sun') {
-	$new_wf_content[] = add_board('__thisweek', date('Y-m-d'), $list);
+	$new_wf_content[] = add_board(date('Y-m-d'), $list);
 }
-$new_wf_content[] = add_board('__lastweek', date('Y-m-d',strtotime('last Sunday')), $list);
+$new_wf_content[] = add_board(date('Y-m-d',strtotime('last Sunday')), $list);
 
 // NEXT SUNDAY'S
 // Do next week's list if it's not Sunday or Saturday
 $next_sunday_filename = date('Y-m-d', strtotime('next Sunday'));
 if ( (date('D') != 'Sun' && date('D') != 'Sat')) {
-	$new_wf_content[] = add_board('__nextweek', $next_sunday_filename, $list);
+	$new_wf_content[] = add_board($next_sunday_filename, $list);
 }
 else {
 	$new_wf_content[] = 'Today is '.date('D'). ' so did not do '.date('Y-m-d', strtotime('next Sunday')).'\'s list';
@@ -54,11 +54,10 @@ file_put_contents($wf_logs, $output);
 
 // End logging stuff
 
-function add_board($oldfilename, $newfilename, $list) {
+function add_board($week, $list) {
 	if (file_exists(txt($week)) === false) {
-		rename(txt($oldfilename), txt($newfilename));
-		$output = file_put_contents(txt($newfilename), randomize($list));
-		$return = '[+] Added '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $newfilename).'\'s list - ' . $output . "B large\n";
+		$output = file_put_contents(txt($week), randomize($list));
+		$return = '[+] Added '.preg_replace("#([0-9]{4})([0-9]{2})([0-9]{2})#", "\\1-\\2-\\3", $week).'\'s list - ' . $output . "B large\n";
 
 		if ($output === false) {
 			$return = 'Could not do file_put_contents';
