@@ -1,4 +1,3 @@
-[+] Added 2025-02-09's list - 1283B large
 
 [+] Added 2025-02-16's list - 1284B large
 Thu, 13 Feb 2025 01:27:28 -0800: Ran workflow
@@ -208,3 +207,7 @@ Fri, 25 Apr 2025 11:33:56 -0700: Ran workflow
 
 2025-04-20 already exists so did not create new file
 [+] Added 2025-04-27's list - 1201B large
+Fri, 25 Apr 2025 15:25:42 -0700: Ran workflow
+2025-04-06 does not exist so nothing was deleted
+2025-04-20 already exists so did not create new file
+2025-04-27 already exists so did not create new file
