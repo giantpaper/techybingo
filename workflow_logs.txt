@@ -1,4 +1,3 @@
-Fri, 28 Mar 2025 11:35:10 -0700: Ran workflow
 [-] Removed 2025-03-09's list
 
 2025-03-23 already exists so did not create new file
@@ -709,3 +708,8 @@ Fri, 28 Aug 2026 21:05:56 -0700: Ran workflow
 2026-08-09 does not exist so nothing was deleted
 2026-08-23 already exists so did not create new file
 2026-08-30 already exists so did not create new file
+Fri, 04 Sep 2026 17:27:56 -0700: Ran workflow
+[-] Removed 2026-08-16's list
+
+2026-08-30 already exists so did not create new file
+[+] Added 2026-09-06's list - 1178B large
